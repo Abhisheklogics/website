@@ -46,7 +46,7 @@ export default function Page({ params }) {
         md:h-fit md:w-[790px] md:ml-[310px] md:mt-[-640px] 2xl:ml-[430px] md:p-5 md:bg-white md:bg-cover md:rounded-xl md:leading-8 md:text-justify md:break-words md:text-wrap  md:bg-fixed">
 
         
-            <h1 className="text-center text-2xl">{data.ExperimentName}</h1>
+            <h1 className="text-center capitalize text-2xl">{data.ExperimentName}</h1>
 
             {data.ExperimentId=='5'|| data.ExperimentId=='4'?<div className="mt-8 ml-[-10px] md:ml-32 md:mt-4">
               <Image
