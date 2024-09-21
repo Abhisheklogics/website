@@ -52,14 +52,14 @@ export default function Page({ params }) {
               <Image
                 width={200}
                 height={200}
-                className="md:ml-20 md:h-52 md:w-80"
+                className="md:ml-20 md:h-52 md:w-80   h-[200px] w-full"
                 src={data.image1}
                 alt="Experiment Image"
               />
             </div>:<Image
                 width={350}
                 height={300}
-                className="md:ml-44 md:mt-6 md:ml-20"
+                className=" md:mt-4 md:ml-48"
                 src={data.image1}
                 alt="Experiment Image"
               />}

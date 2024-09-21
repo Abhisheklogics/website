@@ -46,7 +46,7 @@ export default function Page() {
           <h1 className="text-center text-2xl md:text-center md:text-2xl">
             {data.ExperimentName}
           </h1>
-          <div className="mt-8 ml-[-10px] md:ml-32 md:mt-4">
+          <div className="mt-8 ml-[-10px] md:ml-28 md:mt-4">
               <Image
                 width={350}
                 height={200}
@@ -77,50 +77,24 @@ export default function Page() {
               />
             </div>
 
-          {data.ExperimentId == '1' || data.ExperimentId == '13' ? (
             <div>
               <h2 className="mt-8 text-2xl md:mt-6 md:text-2xl">
-                {data.pinDiagramInfo.replace(':','')}
+                {data.pinDiagramInfo}
               </h2>
               <div className="mt-8 rounded ml-10 md:ml-44 md:mt-6 md:rounded">
-                <Image height={100} width={320} src={data.image3} />
+                <Image height={100} width={450} src={data.image3} />
               </div>
 
               <h2 className="mt-8 text-2xl md:mt-6 md:text-2xl">
-                {data.CircuitDiagramInfo.replace(':','')}
+                {data.CircuitDiagramInfo}
               </h2>
               <div className="mt-8 md:ml-24 md:mt-6 w-fit h-fit">
                 <Image height={300} width={500} src={data.image4} />
               </div>
             </div>
-          ) : (
-            ''
-          )}
+          
 
-          {data.ExperimentId === '14' || data.ExperimentId === '17' ? (
-            <div>
-              <h2 className="mt-2 text-2xl md:mt-2 md:text-2xl">
-                {data.pinDiagramInfo.replace(':','')}
-              </h2>
-              <div className="ml-32 mt-4 md:ml-32 md:mt-4">
-                <Image height={100} width={250} src={data.image3} />
-              </div>
-              <h2 className="mt-2 text-2xl md:mt-2 md:text-2xl">
-                {data.pinDiagramInfo2.replace(':','')}
-              </h2>
-              <div className="ml-32 mt-4 md:ml-32 md:mt-4">
-                <Image height={100} width={250} src={data.image4} />
-              </div>
-              <h2 className="mt-2 text-2xl md:mt-2 md:text-2xl">
-                {data.CircuitDiagramInfo.replace(':','')}
-              </h2>
-              <div className="ml-32 mt-4 md:ml-32 md:mt-4">
-                <Image height={100} width={250} src={data.image5} />
-              </div>
-            </div>
-          ) : (
-            ''
-          )}
+        
 
           <h1 className="mt-10 text-2xl md:mt-20 md:text-2xl">Steps:</h1>
 

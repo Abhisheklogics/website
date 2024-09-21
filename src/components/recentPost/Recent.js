@@ -76,10 +76,10 @@ const RecentPosts = (props) => {
               <img
                 src={image.image1}
                 className="h-10 w-20"
-                alt={image.ExperimentName.toLowerCase()}
+                alt={image.ExperimentName}
               />
-              <p className="mt-[-40px] word-break text-wrap h-10 p-1 ml-[90px] rounded text-blue-600">
-                {image.ExperimentName.toLowerCase()}
+              <p className="mt-[-40px] word-break text-wrap capitalize h-10 p-1 ml-[90px] rounded text-blue-600">
+                {image.ExperimentName}
               </p>
               <hr className="mt-2" />
             </li>
