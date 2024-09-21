@@ -73,7 +73,7 @@ export default function Page({ params }) {
             <p className="mt-8 md:mt-8">{data.overviewinfo2}</p>
 
             <div className="mt-10 md:ml-20">
-             {data.ExperimentId == '1' || data.ExperimentId == '3' || data.ExperimentId == '7' || data.ExperimentId == '4' ||data.ExperimentId == '10' || data.ExperimentId == '11' || data.ExperimentId == '12'  || data.ExperimentId == '13'  ? 
+             {data.ExperimentId == '1' || data.ExperimentId == '3' || data.ExperimentId == '4' || data.ExperimentId == '5' ||data.ExperimentId == '6' || data.ExperimentId == '7' || data.ExperimentId == '8'  || data.ExperimentId == '9' || data.ExperimentId == '10' || data.ExperimentId =='11'? 
              <Image
                 width={500}
                 height={440}

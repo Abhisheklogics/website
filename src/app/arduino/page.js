@@ -55,7 +55,7 @@ export default function Page() {
                 alt="Experiment Image"
               />
             </div>
-          <h2 className="text-sm mt-6 md:text-sm md:mt-4">{data.madeBy}</h2>
+          <h2 className="text-sm mt-6 md:text-sm md:mt-4 font-bold">{data.madeBy}</h2>
           <p className="mt-2 md:mt-2">{data.madeByinfo1}</p>
           <p className="mt-2 md:mt-6">{data.madeByinfo2}</p>
 
