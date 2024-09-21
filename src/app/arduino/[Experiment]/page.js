@@ -64,8 +64,8 @@ export default function Page({ params }) {
                 alt="Experiment Image"
               />}
 
-            <h2 className="text-sm mt-6">{data.madeBy}</h2>
-            <p className="mt-2">{data.madeByinfo}</p>
+            <h2 className="text-sm mt-6 font-bold p-1">{data.madeBy}</h2>
+            <p className="mt-2 ">{data.madeByinfo}</p>
             <p className="mt-2 md:mt-2">{data.madeByinfo1}</p>
             <p className="mt-2 md:mt-6">{data.madeByinfo2}</p>
             <h2 className="text-2xl mt-8">{data.overview}</h2>
@@ -73,7 +73,7 @@ export default function Page({ params }) {
             <p className="mt-8 md:mt-8">{data.overviewinfo2}</p>
 
             <div className="mt-10 md:ml-20">
-             {data.ExperimentId == '1' || data.ExperimentId == '3' || data.ExperimentId == '7' || data.ExperimentId == '4' ||data.ExperimentId == '10' || data.ExperimentId == '11' || data.ExperimentId == '12'  || data.ExperimentId == '17'  ? 
+             {data.ExperimentId == '1' || data.ExperimentId == '3' || data.ExperimentId == '7' || data.ExperimentId == '4' ||data.ExperimentId == '10' || data.ExperimentId == '11' || data.ExperimentId == '12'  || data.ExperimentId == '13'  ? 
              <Image
                 width={500}
                 height={440}
@@ -81,9 +81,9 @@ export default function Page({ params }) {
                 src={data.image2}
                 alt="Specifications"
               />: <Image
-              width={400}
-              height={100}
-              className="ml-2  md:ml-24 bg-none"
+              width={350}
+              height={700}
+              className="ml-2 md:h-[700px] md:w-[500px] md:ml-24 bg-none"
               src={data.image2}
               alt="Specifications"
             />}
@@ -94,14 +94,14 @@ export default function Page({ params }) {
            
             {data.ExperimentId == '1' || data.ExperimentId == '2' || data.ExperimentId=='3'  || data.ExperimentId=='4' || data.ExperimentId=='5'|| data.ExperimentId=='6'|| data.ExperimentId=='7'|| data.ExperimentId=='8'|| data.ExperimentId=='9'|| data.ExperimentId=='10' || data.ExperimentId=='11' ? (
             <div>
-              <h2 className="mt-8 text-2xl md:mt-6 md:text-2xl">
+              <h2 className="mt-8 capitalize text-2xl md:mt-6 md:text-2xl">
                 {data.pinDiagramInfo}
               </h2>
-              <div className="mt-8 rounded ml-10 md:ml-44 md:mt-10 md:rounded">
+              <div className="mt-8 capitalize rounded ml-10 md:ml-44 md:mt-10 md:rounded">
                 <Image height={300} width={450} src={data.image3} />
               </div>
 
-              <h2 className="mt-8 text-2xl md:mt-6 md:text-2xl">
+              <h2 className="mt-8 capitalize text-2xl md:mt-6 md:text-2xl">
                 {data.CircuitDiagramInfo}
               </h2>
               <div className="mt-8 md:ml-24 md:mt-10 w-fit h-fit">
@@ -112,39 +112,25 @@ export default function Page({ params }) {
             ''
           )}
 
-{  data.ExperimentId=='13' ?    
- <div>
-              <h2 className="mt-8 text-2xl md:mt-6 md:text-2xl">
-                {data.pinDiagramInfo}
-              </h2>
-              <div className="mt-8 rounded ml-10 md:ml-44 md:mt-6 md:rounded">
-                <Image height={100} width={280} src={data.image3} />
-              </div>
 
-              <h2 className="mt-8 text-2xl md:mt-6 md:text-2xl">
-                {data.CircuitDiagramInfo}
-              </h2>
-              <div className="mt-8 md:ml-52 md:mt-10 w-fit h-fit">
-                <Image height={300} width={300} src={data.image4} />
-              </div>
-            </div>
-        :''}
 
-          {data.ExperimentId == '14' || data.ExperimentId == '17' ? (
+          {data.ExperimentId == '12'  ? (
             <div>
-              <h2 className="mt-2 text-2xl md:mt-2 md:text-2xl">
+              <h2 className="mt-2 capitalize text-2xl md:mt-2 md:text-2xl">
                 {data.pinDiagramInfo}
               </h2>
               <div className="ml-32 mt-4 md:ml-32 md:mt-10 md:ml-60">
                 <Image height={100} width={350} src={data.image3} />
               </div>
-              <h2 className="mt-2 text-2xl md:mt-2 md:text-2xl md:mt-10 ">
-                {data.pinDiagramInfo2}
+              <div className="mt-2 text-2xl md:mt-6 md:text-2xl md:mt-10 ">
+              <h2 >
+              Pin Diagram of Push Button
               </h2>
+              </div>
               <div className="ml-32 mt-4 md:ml-32 md:mt-4 md:mt-10  md:ml-60 ">
                 <Image height={100} width={350} src={data.image4} className="md:mt-10"/>
               </div>
-              <h2 className="mt-2 text-2xl md:mt-2 md:text-2xl">
+              <h2 className="mt-2  capitalize text-2xl md:mt-2 md:text-2xl">
                 {data.CircuitDiagramInfo}
               </h2>
               <div className="ml-32 mt-4 md:ml-60 md:mt-4 ">
@@ -155,7 +141,61 @@ export default function Page({ params }) {
             ''
           )}
 
-            <h1 className="text-2xl mt-20">Steps:</h1>
+   {data.ExperimentId == '13'  ? (
+            <div className="md:mt-10">
+              <h2 className="mt-2 text-2xl capitalize md:mt-2 md:text-2xl">
+                {data.pinDiagramInfo}
+              </h2>
+              <div className="ml-32 mt-4 md:ml-32 md:mt-10 md:ml-60">
+                <Image height={100} width={350} src={data.image3} />
+              </div>
+              <div className="mt-2 capitalize text-2xl md:mt-6 md:text-2xl md:mt-10 ">
+              <h2 >
+              Pin Diagram of Arduino
+              </h2>
+              </div>
+              <div className="ml-32 mt-4 md:ml-32 md:mt-4 md:mt-10  md:ml-60 ">
+                <Image height={100} width={350} src={data.image4} className="md:mt-10"/>
+              </div>
+              <h2 className="mt-2 capitalize text-2xl md:mt-2 md:text-2xl">
+                {data.CircuitDiagramInfo}
+              </h2>
+              <div className="ml-32 mt-4 md:ml-60 md:mt-4 ">
+                <Image height={100} width={450} src={data.image5} className="md:mt-10"/>
+              </div>
+            </div>
+          ) : (
+            ''
+          )}
+
+          
+   {data.ExperimentId == '14'  ? (
+            <div className="md:mt-20">
+              <h2 className="mt-2 capitalize text-2xl md:mt-2 md:text-2xl">
+                {data.pinDiagramInfo}
+              </h2>
+              <div className="ml-32 mt-4 md:ml-32 md:mt-10 md:ml-60">
+                <Image height={100} width={400} src={data.image3} />
+              </div>
+              <div className="mt-2 capitalize text-2xl md:mt-6 md:text-2xl md:mt-10 ">
+              <h2 >
+              Pin Diagram of Push Button
+              </h2>
+              </div>
+              <div className="ml-32 mt-4 md:ml-32 md:mt-4 md:mt-10  md:ml-60 ">
+                <Image height={100} width={300} src={data.image4} className="md:mt-10"/>
+              </div>
+              <h2 className="mt-2 capitalize text-2xl md:mt-2 md:text-2xl">
+                {data.CircuitDiagramInfo}
+              </h2>
+              <div className="ml-32 mt-4 md:ml-40 md:mt-10 ">
+                <Image height={100} width={570} src={data.image5} className="md:mt-10"/>
+              </div>
+            </div>
+          ) : (
+            ''
+          )}
+        {data.ExperimentId=='14'?'':<div><h1 className="text-2xl mt-20">Steps:</h1>
             <div className="leading-10">
               {data.step && <p>{data.step}</p>}
               {data.step1 && <p className="mt-4">1: {data.step1}</p>}
@@ -165,6 +205,8 @@ export default function Page({ params }) {
               {data.step5 && <p className="ml-">5: {data.step5}</p>}
               {data.step6 && <p className="ml-">6: {data.step6}</p>}
             </div>
+            </div>}
+
 
       
             <h2 className="text-2xl mt-10">Code:</h2>
