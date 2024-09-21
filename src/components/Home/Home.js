@@ -81,7 +81,7 @@ const Footer=dynamic(()=>import('../Footer/Footer'))
           </ul>
         </div>
           </div>
-          <div data-aos='fade-left' className={`rounded mt-20 col-span-3 w-[350px]  p-3 text-black ml-6  md:ml-[500px]
+          <div data-aos='fade-left' className={`rounded mt-20 col-span-3 w-[350px]  p-3 text-black ml-6  md:ml-[540px]
          
           xl:rounded xl:mt-20 bg-green-700 col-span-3 xl:w-[450px] justify-center mx-auto relative text-center xl:p-3 xl:text-black`} >
             <div className=""><h1 className="  animate-typing overflow-hidden whitespace-nowrap border-r-2 border-r-white pr-5 
