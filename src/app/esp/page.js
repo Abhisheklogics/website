@@ -45,9 +45,9 @@ export default function Page() {
    
      
             <>
-            <div className="h-fit w-full p-5 bg-white bg-cover rounded-xl leading-8 text-justify break-words font-light 
+            <div className="h-fit w-full p-5 bg-white bg-cover rounded-xl leading-8 text-justify break-words 
 
-             md:h-fit md:w-[770px] md:text-md md:font-light  md:ml-[350px] md:mt-[-480px] 
+             md:h-fit md:w-[770px] md:text-md md:ml-[350px] md:mt-[-480px] 
           md:p-5 md:bg-white md:bg-cover md:rounded-xl md:leading-8 md:text-justify md:break-words md:text-wrap 
           ">
             <h1 className=" text-center text-2xl 
@@ -55,11 +55,11 @@ export default function Page() {
           ">{data.ExperimentName}</h1>
          
            <div className="mt-6
-           md:ml-40 md:mt-6"> <img className="h-72 w-fit 
+           md:ml-40 md:mt-6"> <img className="h-60 w-96 
            md:h-60 md:w-[400px]" loading="lazy"
           src={data.image1} alt="Experiment Image" /></div>
           <h1 className="mt-4  text-sm ml-2
-          md:mt-4  md:text-sm md:ml-2">Made By : Aman Raj</h1>
+          md:mt-4  md:text-sm md:ml-2 font-bold">Made By : Aman Raj</h1>
             <h2 className="text-sm mt-2
             md:text-sm md:mt-2">{data.madeBy}</h2>
             <p className="mt-2
@@ -85,7 +85,7 @@ export default function Page() {
             <div className="ml-20  h-[300px]
             md:ml-20  md:h-[300px]">
              
-                <img  className='mt-6 h-44 md:w-[420px] md:h-[300px] ml-[-50px]
+                <img  className='md:mt-2 md:h-[300px] md:w-[420px]
                 md:mt-6 md:h-44 md:w-[300px]' loading="lazy" src={data.image3} alt="Specifications" />
              
             </div>
@@ -97,7 +97,7 @@ export default function Page() {
             <div className="ml-32 mt-10
             md:ml-60   md:mt-10">
              
-             <img className="h-72 w-72  ml-[-50px]
+             <img className="md:h-80 md:w-96 md:ml-0
              md:h-72 md:w-72" loading="lazy" src={data.image4} alt="Specifications" />
           
          </div>

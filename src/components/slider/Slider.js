@@ -26,12 +26,12 @@ const SimpleSlider = () => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-[50%] right-4 h-8 w-8 transform -translate-y-1/2 text-white bg-gray-800 bg-opacity-50 p-2 rounded-full cursor-pointer hover:bg-opacity-100 md:h-10 md:w-10 md:p-2"
+        className="absolute top-[50%] right-4 h-8 w-8 md:h-8 md:w-10 transform -translate-y-1/2 text-white bg-gray-800 bg-opacity-50 p-2 rounded-full cursor-pointer hover:bg-opacity-100 md:h-10 md:w-10 md:p-2"
         style={{ zIndex: 1 }}
         onClick={onClick}
       >
-        <div className="ml-2 font-bold md:ml-2 md:mt-1">
-          <Image width={8} height={10} src={image8} alt="Next" />
+        <div className="ml-2 font-bold md:ml-[10px] md:mt-[3px]">
+          <Image width={10} height={10} src={image8} alt="Next" />
         </div>
       </div>
     );
@@ -41,11 +41,11 @@ const SimpleSlider = () => {
     const { onClick } = props;
     return (
       <div
-        className="absolute top-[50%] left-4 h-8 w-8 transform -translate-y-1/2 text-white bg-gray-800 bg-opacity-50 p-2 rounded-full cursor-pointer hover:bg-opacity-100 md:h-10 md:w-10 md:p-2"
+        className="absolute top-[50%] left-4 h-8 w-8   md:h-8 md:w-10 transform -translate-y-1/2 text-white bg-gray-800 bg-opacity-50 p-2 rounded-full cursor-pointer hover:bg-opacity-100 md:h-10 md:w-10 md:p-2"
         style={{ zIndex: 1 }}
         onClick={onClick}
       >
-        <div className="md:ml-1 font-bold md:mt-[3px]">
+        <div className="md:ml-[6px] ml-[2px]   font-bold md:mt-[3px]">
           <Image className="-scale-125" width={8} height={10} src={image8} alt="Prev" />
         </div>
       </div>

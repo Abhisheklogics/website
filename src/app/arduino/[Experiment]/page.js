@@ -83,7 +83,7 @@ export default function Page({ params }) {
               />: <Image
               width={350}
               height={700}
-              className="ml-2 md:h-[700px] md:w-[500px] md:ml-24 bg-none"
+              className="ml-2 md:h-[360px] md:w-[520px] md:ml-24 bg-none"
               src={data.image2}
               alt="Specifications"
             />}

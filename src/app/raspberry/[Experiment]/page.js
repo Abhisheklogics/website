@@ -65,7 +65,7 @@ export default function Page({ params }) {
          />
           }
           
-          <h2 className=" text-sm mt-4 md:text-sm md:mt-2">{data.madeBy}</h2>
+          <h2 className=" text-sm mt-4 md:text-sm md:mt-2 font-bold ">{data.madeBy}</h2>
           <p className="md:mt-6 mt-6">{data.madeByinfo1}</p>
           <p className="md:mt-6 mt-6">{data.madeByinfo2}</p>
           <h2 className="md:text-2xl md:mt-10 text-2xl  mt-10">{data.overview}</h2>

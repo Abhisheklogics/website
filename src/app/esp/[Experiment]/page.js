@@ -44,15 +44,15 @@ export default  function Page({params}) {
  
     return (
         <>
-        <div className="h-fit w-full p-5 bg-white bg-cover rounded-xl leading-8 text-justify break-words font-light
+        <div className="h-fit w-full p-5 bg-white bg-cover rounded-xl leading-8 text-justify break-words 
           md:h-fit md:w-[770px] md:text-md  md:ml-[350px] md:mt-[-478px] 
-      md:p-5 md:bg-white md:bg-cover md:rounded-xl md:leading-8 md:text-justify md:break-words md:text-wrap md:font-light
+      md:p-5 md:bg-white md:bg-cover md:rounded-xl md:leading-8 md:text-justify md:break-words md:text-wrap 
       ">
         <h1 className="  text-center text-2xl md:text-center md:text-2xl
       ">{data.ExperimentName}</h1>
-       <div className="md:ml-32 md:mt-6 mt-6"> <img className="md:h-60" loading="lazy"
+       <div className="md:ml-32 md:mt-6 mt-6"> <img className="md:h-60 md:w-96 md:ml-10" loading="lazy"
       src={data.image1} alt="Experiment Image" /></div>
-       <h1 className="md:mt-4  md:text-sm md:ml-2 mt-4  text-sm ml-2">madeBy : Aman raj</h1>
+       <h1 className="md:mt-4  md:text-sm md:ml-2 mt-4  text-sm ml-2 font-bold">madeBy : Aman raj</h1>
         <h2 className="md:text-sm md:mt-2 ">{data.madeBy}</h2>
         <p className="md:mt-2">{data.madeByinfo}</p>
         <h2 className="  md:mt-10 ">{data.overview}</h2>
@@ -62,7 +62,7 @@ export default  function Page({params}) {
       
         <div className="md:ml-12 md:mt-8">
          
-            <img width={540} height={100} loading="lazy" src={data.image2} alt="Specifications" />
+            <img width={590} height={400} loading="lazy" src={data.image2} alt="Specifications" />
          
         </div>
 
@@ -75,7 +75,7 @@ export default  function Page({params}) {
       
      </div>:<div className="md:ml-20  md:h-[300px]">
          
-         <img  className='md:mt-10 md:h-52 md:w-[280px] md:ml-32' loading="lazy" src={data.image3} alt="Specifications" />
+         <img  className='md:mt-10 md:h-60 md:w-[380px] md:ml-32' loading="lazy" src={data.image3} alt="Specifications" />
       
      </div>} 
       
@@ -85,7 +85,7 @@ export default  function Page({params}) {
         
         <div className="md:ml-32 md:mt-10">
          
-         <img className="md:h-72 md:w-96 md:ml-32" loading="lazy" src={data.image4} alt="Specifications" />
+         <img className="md:h-80 md:w-96 md:ml-24" loading="lazy" src={data.image4} alt="Specifications" />
       
      </div>
         
