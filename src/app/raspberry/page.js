@@ -45,10 +45,10 @@ export default function Page() {
   
       <>
        
-        <div className="h-fit w-full p-5 bg-white bg-cover rounded-xl leading-10 text-justify break-words font-light 
+        <div className="h-fit w-full p-5 bg-white bg-cover rounded-xl leading-10 text-justify break-words 
 
           md:h-fit md:w-[790px]   md:ml-[330px] md:mt-[-630px]   2xl:ml-[430px]
-      md:p-5 md:bg-white md:bg-cover md:rounded-xl md:leading-8 md:text-justify md:break-words md:text-wrap md:font-light
+      md:p-5 md:bg-white md:bg-cover md:rounded-xl md:leading-8 md:text-justify md:break-words md:text-wrap 
       ">
          
               <h1 className=" text-center text-2xl 
@@ -61,11 +61,15 @@ export default function Page() {
         <h2 className="text-sm mt-2
         md:text-sm md:mt-2">{data.madeBy}</h2>
         <p className="mt-6
-        md:mt-6">{data.madeByinfo}</p>
+        md:mt-6">{data.madeByinfo1}</p>
+         <p className="mt-6
+        md:mt-6">{data.madeByinfo2}</p>
         <h2 className=" text-2xl  mt-10
         md:text-2xl  md:mt-10">{data.overview}</h2>
         <p className="mt-10
-        md:mt-10">{data.overviewinfo}</p>
+        md:mt-10">{data.overviewinfo1}</p>
+         <p className="mt-10
+        md:mt-10">{data.overviewinfo2}</p>
 
         <div>
           <p className="mt-10 text-2xl

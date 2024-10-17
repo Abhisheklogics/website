@@ -37,9 +37,9 @@ export default function Page({ params }) {
 }
   return (
     <>
-      <div className="h-fit w-full p-5 bg-white bg-cover rounded-xl leading-10 text-justify break-words font-light 
+      <div className="h-fit w-full p-5 bg-white bg-cover rounded-xl leading-10 text-justify break-words 
 
-      md:h-fit md:w-[790px] md:ml-[330px] md:mt-[-630px] 2xl:ml-[430px] md:p-5 md:bg-white md:bg-cover md:rounded-xl md:leading-8 md:text-justify md:break-words md:text-wrap md:font-light">
+      md:h-fit md:w-[790px] md:ml-[330px] md:mt-[-630px] 2xl:ml-[430px] md:p-5 md:bg-white md:bg-cover md:rounded-xl md:leading-8 md:text-justify md:break-words md:text-wrap ">
       
           <h1 className="text-center text-2xl 
           md:text-center md:text-2xl">{data.ExperimentName}</h1>
@@ -66,9 +66,11 @@ export default function Page({ params }) {
           }
           
           <h2 className=" text-sm mt-4 md:text-sm md:mt-2">{data.madeBy}</h2>
-          <p className="md:mt-6 mt-6">{data.madeByinfo}</p>
+          <p className="md:mt-6 mt-6">{data.madeByinfo1}</p>
+          <p className="md:mt-6 mt-6">{data.madeByinfo2}</p>
           <h2 className="md:text-2xl md:mt-10 text-2xl  mt-10">{data.overview}</h2>
-          <p className="md:mt-10 md:leading-8 mt-10">{data.overviewinfo}</p>
+          <p className="md:mt-10 md:leading-8 mt-10">{data.overviewinfo1}</p>
+          <p className="md:mt-10 md:leading-8 mt-10">{data.overviewinfo2}</p>
 
           <div className="md:leading-10 ">
             <p className="md:mt-10 md:text-2xl mt-10 text-2xl">{data.Material}</p>
