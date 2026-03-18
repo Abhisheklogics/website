@@ -82,56 +82,76 @@
     </div>
 </div>
 
-<section class="hero-gradient w-full md:mt-[80px]  mt-[63px] md:min-h-[600px] flex items-center px-4 sm:px-6 md:px-20 py-20 sm:py-24 md:py-12 text-white relative">
+<section class="relative w-full min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-        <img src="./design.jpg" alt="Background" class="w-full h-full   opacity-40">
-        <div class="absolute inset-0 bg-slate-30/10"></div>
+        <img src="./design.jpg" alt="Background" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#001f3f] via-[#001f3f]/80 to-transparent"></div>
     </div>
     
-    <div class="w-full md:w-2/3 md:-mt-32  lg:w-1/2 z-10 text-center md:text-left">
-        <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
-            EMPOWERING <br class="hidden md:block"> FUTURE INNOVATORS
-        </h1>
-        <p class="text-sm sm:text-base md:text-lg text-gray-300 mb-6 sm:mb-8 max-w-md mx-auto md:mx-0">
-            Comprehensive STEM, AI, and Robotics Solutions for the 21st Century.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-3 sm:gap-4">
-            <button class="bg-sky-600 hover:bg-sky-500 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold transition text-xs sm:text-sm">EXPLORE LAB SOLUTIONS</button>
-            <button class="bg-cyan-500 hover:bg-cyan-400 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold transition text-slate-900 text-xs sm:text-sm">BROWSE KITS</button>
+    <div class="container mx-auto px-6 md:px-20 z-10 py-20">
+        <div class="max-w-2xl text-left">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 leading-tight tracking-tight">
+                EMPOWERING <br> FUTURE INNOVATORS
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-lg">
+                Comprehensive STEM, AI, and Robotics Solutions for the 21st Century
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button class="bg-[#0070f3] hover:bg-blue-600 text-white px-8 py-3 rounded-full font-bold transition-all shadow-lg text-sm tracking-wide">
+                    EXPLORE LAB SOLUTIONS
+                </button>
+                <button class="bg-[#00dfd8] hover:bg-cyan-400 text-[#003333] px-8 py-3 rounded-full font-bold transition-all shadow-lg text-sm tracking-wide">
+                    BROWSE EDUCATIONAL KITS
+                </button>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="max-w-7xl mx-auto px-4 sm:px-6 -mt-16 md:-mt-28 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6 relative z-20">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 -mt-12 md:-mt-20 pb-20 relative z-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="bg-gradient-to-b from-[#1e40af] to-[#3b82f6] p-8 rounded-2xl text-white shadow-xl flex flex-col items-start hover:-translate-y-2 transition duration-300 border border-white/10">
+            <div class="mb-4 text-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <h3 class="font-bold text-xl leading-tight">STEM EDUCATION</h3>
+            <p class="text-sm opacity-90 mt-2 font-medium">Curriculum, Books & Tools</p>
+        </div>
 
-    <!-- CARD -->
-    <div class="bg-gradient-to-br from-blue-700 to-indigo-800 p-6 md:p-7 rounded-3xl text-white shadow-2xl hover:-translate-y-2 transition duration-300">
-        <div class="w-12 h-12 mb-4 rounded-lg bg-white/20"></div> <!-- icon placeholder -->
-        <h3 class="font-bold text-lg uppercase">STEM Education</h3>
-        <p class="text-sm opacity-80 mt-1">Curriculum, Books & Tools</p>
+        <div class="bg-gradient-to-b from-[#00d4cc] to-[#22d3ee] p-8 rounded-2xl text-[#003333] shadow-xl flex flex-col items-start hover:-translate-y-2 transition duration-300 border border-white/10">
+            <div class="mb-4 text-[#003333]/80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20V4"/></svg>
+            </div>
+            <h3 class="font-bold text-xl leading-tight">SUPPORTING <br>TECHNOLOGIES</h3>
+            <p class="text-sm opacity-90 mt-2 font-medium">IoT, AI, ML, Coding</p>
+        </div>
+
+        <div class="bg-gradient-to-b from-[#0f172a] to-[#1e293b] p-8 rounded-2xl text-white shadow-xl flex flex-col items-start hover:-translate-y-2 transition duration-300 border border-white/20">
+            <div class="mb-4 text-white/90">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3 class="font-bold text-xl leading-tight">INNOVATION LABS</h3>
+            <p class="text-sm opacity-80 mt-2 font-medium text-gray-300">Ai, Debotics, UAk, Agriculture Yeck, Mechattanics</p>
+        </div>
+
+        <div class="bg-gradient-to-b from-[#f97316] to-[#ea580c] p-8 rounded-2xl text-white shadow-xl flex flex-col items-start hover:-translate-y-2 transition duration-300 border border-white/10">
+            <div class="mb-4 bg-white p-1 rounded-sm">
+                 <div class="w-8 h-5 flex flex-col">
+                    <div class="bg-[#FF9933] h-1/3 w-full"></div>
+                    <div class="bg-white h-1/3 w-full flex items-center justify-center"><div class="w-1 h-1 bg-blue-900 rounded-full"></div></div>
+                    <div class="bg-[#138808] h-1/3 w-full"></div>
+                 </div>
+            </div>
+            <h3 class="font-bold text-xl leading-tight">NEP 2020 <br>COMPLIANCE</h3>
+            <p class="text-sm opacity-90 mt-2 font-medium">Mepeing Curriculum to N6P Guidermes</p>
+        </div>
+
     </div>
-
-    <div class="bg-gradient-to-br from-cyan-400 to-teal-500 p-6 md:p-7 rounded-3xl text-slate-900 shadow-2xl hover:-translate-y-2 transition duration-300">
-        <div class="w-12 h-12 mb-4 rounded-lg bg-white/30"></div>
-        <h3 class="font-bold text-lg uppercase">Supporting Technologies</h3>
-        <p class="text-sm opacity-80 mt-1">IoT, AI, ML, Coding</p>
-    </div>
-
-    <div class="bg-gradient-to-br from-slate-800 to-black p-6 md:p-7 rounded-3xl text-white shadow-2xl hover:-translate-y-2 transition duration-300">
-        <div class="w-12 h-12 mb-4 rounded-lg bg-white/20"></div>
-        <h3 class="font-bold text-lg uppercase">Innovation Labs</h3>
-        <p class="text-sm opacity-80 mt-1">AI, Robotics, Mechatronics</p>
-    </div>
-
-    <div class="bg-gradient-to-br from-orange-400 to-red-500 p-6 md:p-7 rounded-3xl text-white shadow-2xl hover:-translate-y-2 transition duration-300">
-        <div class="w-12 h-12 mb-4 rounded-lg bg-white/20"></div>
-        <h3 class="font-bold text-lg uppercase">NEP 2020</h3>
-        <p class="text-sm opacity-80 mt-1">Curriculum Mapping</p>
-    </div>
-
 </section>
 
-<section class="max-w-7xl mx-auto px-4 sm:px-6 mt-12 md:mt-12">
+<section class="max-w-7xl mx-auto px-4 sm:px-6 -mt-10 md:-mt-12">
 
     <!-- HEADER -->
     <div class="flex justify-between items-center mb-8">
@@ -155,7 +175,7 @@
             <div class="flex-1">
                 <h4 class="font-bold text-lg text-gray-800">Lego</h4>
                 <p class="text-sm text-gray-500 line-clamp-2">
-                    Logo illustration cax, tools, medsr, and more...
+                    Logo illustration cax, tools, medsr, and more.
                 </p>
 
                 <button class="mt-3 bg-sky-600 text-white text-xs px-4 py-2 rounded-full font-semibold hover:bg-sky-500">
@@ -171,7 +191,7 @@
             <div class="flex-1">
                 <h4 class="font-bold text-lg text-gray-800">IoT</h4>
                 <p class="text-sm text-gray-500">
-                    IoT innovation and technology kits...
+                    IoT innovation and technology kits.
                 </p>
 
                 <button class="mt-3 bg-cyan-500 text-white text-xs px-4 py-2 rounded-full font-semibold hover:bg-cyan-400">
@@ -187,7 +207,7 @@
             <div class="flex-1">
                 <h4 class="font-bold text-lg text-gray-800">AI Kits</h4>
                 <p class="text-sm text-gray-500">
-                    Advanced technology kits...
+                    Advanced technology kits.
                 </p>
 
                 <button class="mt-3 bg-cyan-500 text-white text-xs px-4 py-2 rounded-full font-semibold hover:bg-cyan-400">
@@ -199,7 +219,7 @@
     </div>
 
 </section>
-<footer class="bg-slate-900 text-white py-8 sm:py-12 mt-8 px-4 sm:px-6 md:px-20 border-t border-white/10">
+<footer class="bg-slate-900 text-white py-8 sm:py-12 mt-12 px-4 sm:px-6 md:px-20 border-t border-white/10">
     <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
         <div>
             <h3 class="text-lg sm:text-xl font-bold text-cyan-400 mb-3 sm:mb-4 uppercase tracking-tighter">Aether Solutions</h3>
@@ -218,7 +238,7 @@
             <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">Innovation Hub, Sector 12<br>Business District, Agra<br>UP, India</p>
         </div>
     </div>
-    <div class="text-center mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/5 text-[8px] sm:text-[10px] text-gray-500 uppercase tracking-widest">
+    <div class="text-center mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/5 text-[8px] sm:text-[10px] text-gray-300 uppercase tracking-widest">
         © 2026 Aether Solutions. Built for Future Innovators.
     </div>
 </footer>
