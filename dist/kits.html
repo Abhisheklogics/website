@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aether Kits</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:Inter;
+background:#020617;
+color:white;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+width:100%;
+top:0;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+background:rgba(2,6,23,.6);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+.logo{
+font-weight:800;
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+gap:40px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#94a3b8;
+font-size:13px;
+}
+
+nav a:hover{
+color:#22d3ee;
+}
+
+/* HERO */
+
+.hero{
+padding:180px 60px 100px;
+background:radial-gradient(circle at right,#0ea5e9 0%, transparent 40%);
+}
+
+.hero h1{
+font-size:70px;
+max-width:700px;
+}
+
+.hero p{
+color:#94a3b8;
+max-width:500px;
+margin-top:20px;
+}
+
+/* FILTER */
+
+.filters{
+display:flex;
+gap:15px;
+padding:40px 60px;
+flex-wrap:wrap;
+}
+
+.filter-btn{
+padding:10px 20px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,.1);
+cursor:pointer;
+font-size:13px;
+}
+
+.filter-btn.active{
+background:#22d3ee;
+color:black;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+padding:40px 60px;
+}
+
+/* CARD */
+
+.card{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.06);
+padding:30px;
+border-radius:24px;
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#22d3ee;
+}
+
+.card::before{
+content:"";
+position:absolute;
+width:200px;
+height:200px;
+background:#22d3ee;
+filter:blur(100px);
+opacity:.15;
+top:-50px;
+right:-50px;
+}
+
+.card h3{
+margin-top:20px;
+}
+
+.card p{
+font-size:13px;
+color:#94a3b8;
+}
+
+/* FEATURED */
+
+.featured{
+margin:80px 60px;
+padding:50px;
+border-radius:30px;
+background:linear-gradient(135deg,#06b6d4,#2563eb);
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.featured h2{
+font-size:40px;
+}
+
+.featured button{
+background:black;
+color:white;
+border:none;
+padding:15px 30px;
+border-radius:30px;
+cursor:pointer;
+}
+
+/* CTA */
+
+.cta{
+text-align:center;
+padding:120px 20px;
+}
+
+.cta h2{
+font-size:50px;
+}
+
+.cta button{
+margin-top:30px;
+background:#22d3ee;
+border:none;
+padding:18px 40px;
+border-radius:40px;
+font-weight:700;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">AETHER</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Labs</a></li>
+<li><a href="#">Kits</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+</nav>
+
+
+<section class="hero">
+
+<h1>Explore Future-Ready Learning Kits</h1>
+
+<p>
+Hands-on STEM kits designed for AI, Robotics, IoT and Innovation driven classrooms.
+</p>
+
+</section>
+
+
+<div class="filters">
+
+<div class="filter-btn active">All Kits</div>
+<div class="filter-btn">Electronics</div>
+<div class="filter-btn">Robotics</div>
+<div class="filter-btn">AI</div>
+<div class="filter-btn">Aerospace</div>
+
+</div>
+
+
+<section class="featured">
+
+<div>
+<h2>Featured Innovation Kit</h2>
+<p>Complete AI + Robotics + IoT lab in one box.</p>
+</div>
+
+<button>View Kit</button>
+
+</section>
+
+
+
+<section class="grid" id="kitGrid">
+
+<div class="card">
+<h3>Arduino Starter Kit</h3>
+<p>Learn circuits, sensors and embedded programming.</p>
+</div>
+
+<div class="card">
+<h3>LEGO STEM Kit</h3>
+<p>Mechanical design and logic building activities.</p>
+</div>
+
+<div class="card">
+<h3>IoT Innovation Kit</h3>
+<p>Cloud dashboards, ESP32 and real time monitoring.</p>
+</div>
+
+<div class="card">
+<h3>UAV Drone Kit</h3>
+<p>Flight control, aerodynamics and mission planning.</p>
+</div>
+
+<div class="card">
+<h3>Robotics AI Kit</h3>
+<p>Computer vision robotics and automation learning.</p>
+</div>
+
+<div class="card">
+<h3>Smart City Kit</h3>
+<p>Urban tech simulation using sensors and AI.</p>
+</div>
+
+<div class="card">
+<h3>Renewable Energy Kit</h3>
+<p>Solar tracking, wind energy and storage models.</p>
+</div>
+
+<div class="card">
+<h3>Machine Learning Kit</h3>
+<p>Edge AI models and training experiments.</p>
+</div>
+
+</section>
+
+
+
+<section class="cta">
+
+<h2>Build Innovation Classrooms</h2>
+
+<button>Request Catalogue</button>
+
+</section>
+
+
+<script>
+
+/* FILTER UI */
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+btn.onclick=()=>{
+document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+}
+})
+
+</script>
+
+</body>
+</html>
