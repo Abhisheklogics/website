@@ -88,10 +88,10 @@ animation:gradientMove 6s linear infinite;
     </div>
 </nav>
 
-<div id="mobile-menu" class="fixed inset-0 bg-black/50 z-50 md:hidden translate-x-full transition-transform duration-300">
+<div id="mobile-menu" class="fixed inset-0 bg-black/50 z-50 md:hidden translate-x-full transition-transform duration-300 rounded-lg">
     <div class="absolute right-0 top-0 h-fit w-64 bg-sky-900 text-white p-6">
         <button id="menu-close" class="absolute top-4 right-4 text-3xl">&times;</button>
-        <ul class="mt-12 space-y-4 text-sm font-semibold">
+        <ul class="mt-4 space-y-4 text-sm font-semibold">
             <li class="text-cyan-100" id="nav-home"><a href="index.html">HOME</a></li>
             <li class="border-t border-white/10 pt-2">SOLUTIONS</li>
  <li  class="pl-4 text-xs text-gray-300" id="nav-labsetup"><a href="labsetup.html"> Lab Setups</a></li>
@@ -105,66 +105,92 @@ animation:gradientMove 6s linear infinite;
     </div>
 </div>
 
-<section class="hero-gradient w-full min-h-screen pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-12 px-4 sm:px-6 md:px-20 text-white relative flex items-center justify-center">
-    
-   
+<section class="relative w-full min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-20 py-20 overflow-hidden">
+
+    <!-- BACKGROUND -->
     <div class="absolute inset-0 z-0">
-        <img src="./design.jpg" alt="Background Pattern" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-sky-950/40"></div>
+        <img src="./design.jpg" class="w-full h-full object-cover opacity-90">
+        <div class="absolute inset-0 bg-gradient-to-br from-sky-800 via-black/80 to-sky-700"></div>
     </div>
-    
-    <div class="relative z-10 w-full max-w-[90%] xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto">
-        <div class="bg-white rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl overflow-hidden">
-          
-            <div class="bg-gradient-to-r from-sky-600 to-sky-700 px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6">
-                <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white text-center">Send us a Message</h2>
+
+    <!-- MAIN CARD -->
+    <div class="relative z-10 w-full max-w-4xl">
+
+        <div class="backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl shadow-2xl p-6 sm:p-10">
+
+            <!-- HEADING -->
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white">
+                    Contact Us
+                </h2>
+                <p class="text-gray-300 mt-3 text-sm md:text-base">
+                    Reach out instantly via call, WhatsApp, email or location.
+                </p>
             </div>
-            
-            <div class="p-4 sm:p-5 md:p-6 lg:p-8">
-                <p class="text-xs sm:text-sm text-gray-600 mb-4 sm:mb-5 md:mb-6">Have questions or want to discuss your STEM lab requirements? Fill out the form below and we'll get back to you within 24 hours.</p>
-                
-                <form class="space-y-3 sm:space-y-4">
-                 
-                    <div class="grid grid-cols-1 xs:grid-cols-2 gap-3 sm:gap-4">
-                        <div>
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Your Name </label>
-                            <input type="text" placeholder="Enter your name" 
-                                class="w-full p-2.5 sm:p-3 bg-gray-50 rounded-lg sm:rounded-xl outline-none focus:ring-2 focus:ring-sky-500 transition border border-gray-200 focus:border-transparent text-xs sm:text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-medium text-gray-700 mb-1">Email Address </label>
-                            <input type="email" placeholder="Enter your email" 
-                                class="w-full p-2.5 sm:p-3 bg-gray-50 rounded-lg sm:rounded-xl outline-none focus:ring-2 focus:ring-sky-500 transition border border-gray-200 focus:border-transparent text-xs sm:text-sm">
-                        </div>
-                    </div>
+
+            <!-- CONTACT GRID -->
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- PHONE -->
+                <a href="tel:+919876543210"
+                   class="bg-white/10 border border-white/20 rounded-2xl p-6 flex items-center gap-4 hover:scale-105 transition">
+
+                    <div class="text-3xl">📞</div>
 
                     <div>
-                        <label class="block text-xs font-medium text-gray-700 mb-1">Phone Number</label>
-                        <input type="tel" placeholder="Enter your phone number" 
-                            class="w-full p-2.5 sm:p-3 bg-gray-50 rounded-lg sm:rounded-xl outline-none focus:ring-2 focus:ring-sky-500 transition border border-gray-200 focus:border-transparent text-xs sm:text-sm">
+                        <h3 class="text-white font-semibold">Call Us</h3>
+                        <p class="text-gray-300 text-sm">+91 888888888</p>
                     </div>
+
+                </a>
+
+                <!-- WHATSAPP -->
+                <a href="https://wa.me/919876543210?text=Hi%20mujhe%20aapke%20STEM%20solutions%20ke%20bare%20me%20janna%20hai"
+                   target="_blank"
+                   class="bg-white/10 border border-white/20 rounded-2xl p-6 flex items-center gap-4 hover:scale-105 transition">
+
+                    <div class="text-3xl">💬</div>
 
                     <div>
-                        <label class="block text-xs font-medium text-gray-700 mb-1">Subject </label>
-                        <input type="text" placeholder="Enter subject" 
-                            class="w-full p-2.5 sm:p-3 bg-gray-50 rounded-lg sm:rounded-xl outline-none focus:ring-2 focus:ring-sky-500 transition border border-gray-200 focus:border-transparent text-xs sm:text-sm">
+                        <h3 class="text-white font-semibold">WhatsApp</h3>
+                        <p class="text-gray-300 text-sm">Chat instantly</p>
                     </div>
+
+                </a>
+
+                <!-- EMAIL -->
+                <a href="mailto:support@sarkit.com"
+                   class="bg-white/10 border border-white/20 rounded-2xl p-6 flex items-center gap-4 hover:scale-105 transition">
+
+                    <div class="text-3xl">📧</div>
 
                     <div>
-                        <label class="block text-xs font-medium text-gray-700 mb-1">Your Message </label>
-                        <textarea rows="4" placeholder="Type your message here..." 
-                            class="w-full p-2.5 sm:p-3 bg-gray-50 rounded-lg sm:rounded-xl outline-none focus:ring-2 focus:ring-sky-500 transition border border-gray-200 focus:border-transparent text-xs sm:text-sm"></textarea>
+                        <h3 class="text-white font-semibold">Email</h3>
+                        <p class="text-gray-300 text-sm">support@sarkit.com</p>
                     </div>
 
-                    <div class="flex justify-center pt-2 sm:pt-3">
-                        <button class="bg-sky-600 hover:bg-sky-700 text-white px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 rounded-full font-bold transition w-full xs:w-auto shadow-lg hover:shadow-xl text-xs sm:text-sm tracking-wide">
-                            SEND MESSAGE
-                        </button>
+                </a>
+
+                <!-- LOCATION -->
+                <a href="https://maps.google.com/?q=Agra+Uttar+Pradesh"
+                   target="_blank"
+                   class="bg-white/10 border border-white/20 rounded-2xl p-6 flex items-center gap-4 hover:scale-105 transition">
+
+                    <div class="text-3xl">📍</div>
+
+                    <div>
+                        <h3 class="text-white font-semibold">Location</h3>
+                        <p class="text-gray-300 text-sm">Agra, Uttar Pradesh</p>
                     </div>
-                </form>
+
+                </a>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
 
@@ -177,9 +203,9 @@ animation:gradientMove 6s linear infinite;
         <div>
             <h4 class="font-bold mb-3 sm:mb-4 uppercase text-[10px] sm:text-xs tracking-widest text-gray-400">Navigation</h4>
             <ul class="text-xs sm:text-sm space-y-1.5 sm:space-y-2 text-gray-300">
-                <li class="hover:text-cyan-400 cursor-pointer">Virtual Labs</li>
-                <li class="hover:text-cyan-400 cursor-pointer">Educational Kits</li>
-                <li class="hover:text-cyan-400 cursor-pointer">Contact Support</li>
+                <li class="hover:text-cyan-400 cursor-pointer"><a href="vlab.html">Virtual Labs</a></li>
+                <li class="hover:text-cyan-400 cursor-pointer"><a href="kits.html">Educational Kits</a></li>
+                <li class="hover:text-cyan-400 cursor-pointer"><a href="contact.html" id="nav-contact">Contact Support</a></li>
             </ul>
         </div>
         <div class="sm:col-span-2 md:col-span-1">
