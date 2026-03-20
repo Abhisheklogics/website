@@ -6,43 +6,18 @@
     <title>SARKIT EdTech</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         .hero-gradient {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #083344 100%);
         }
-  .navbar::after{
-content:"";
-position:absolute;
-left:0;
-bottom:0;
-width:100%;
-height:3px;
-
-background:linear-gradient(
-90deg,
-#00f0ff,
-#2ed3e2,
-#7b61ff,
-#00f0ff
-);
-
-background-size:300% 100%;
-animation:gradientMove 6s linear infinite;
-}
-
-@keyframes gradientMove{
-0%{background-position:0% 50%;}
-100%{background-position:100% 50%;}
-}
     </style>
 </head>
 <body class="bg-gray-50">
 
 
-<nav  class="sticky top-0 left-0 w-full  z-50 bg-sky-950 navbar">
+<nav class="sticky top-0 left-0 w-full z-50 bg-sky-950">
     <div class="flex flex-col w-full">
         <div class="flex justify-between items-center px-4 sm:px-6 md:px-20 h-16 md:h-20 text-white bg-gradient-to-b from-black/60 to-transparent">
          
@@ -96,13 +71,13 @@ animation:gradientMove 6s linear infinite;
         <ul class="mt-4 space-y-4 text-sm font-semibold">
             <li class="text-cyan-100" id="nav-home"><a href="index.html">HOME</a></li>
             <li class="border-t border-white/10 pt-2">SOLUTIONS</li>
- <li  class="pl-4 text-xs text-gray-300" id="nav-labsetup"><a href="labsetup.html"> Lab Setups</a></li>
-            <li class="pl-4 text-xs text-gray-300"  id="nav-vlab"><a href="vlab.html">Virtual Labs</a></li>
+            <li class="pl-4 text-xs text-gray-300">Lab Setups</li>
+            <li class="pl-4 text-xs text-gray-300">Virtual Labs</li>
             <li class="pl-4 text-xs text-gray-300">Curriculum</li>
-            <li class="pl-4 text-xs text-gray-300" id="nav-kits"><a href="kits.html">Kits</a></li>
+            <li class="pl-4 text-xs text-gray-300">Kits</li>
             <li class="border-t border-white/10 pt-2">RESOURCES</li>
             <li>COMPANY</li>
-            <li><a href="contact.html" id="nav-contact">CONTACT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
         </ul>
     </div>
 </div>
@@ -176,6 +151,8 @@ animation:gradientMove 6s linear infinite;
     </div>
 </section>
 
+
+
 <!-- WHAT WE DO ULTRA PREMIUM SECTION -->
 <section class="relative py-28 bg-gradient-to-b from-[#020617] via-[#020617] to-[#031224] overflow-hidden">
 
@@ -188,7 +165,7 @@ animation:gradientMove 6s linear infinite;
         <div class="text-center mb-20">
             <h2 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight">What We Do</h2>
             <p class="text-gray-400 mt-6 max-w-3xl mx-auto text-lg">
-                We build complete experiential technology ecosystems that empower institutions to innovate, prototype and lead the future of engineering education.
+                SARKIT EdTech turns curiosity into capability through experiential STEM ecosystems, intelligent lab infrastructures, future-focused kits, and immersive simulations, enabling learners and institutions to build, innovate, and lead confidently in a rapidly evolving technological world. 
             </p>
         </div>
 
@@ -249,84 +226,160 @@ animation:gradientMove 6s linear infinite;
     </div>
 </section>  
 
-<!-- LAB SETUPS ULTRA FUTURISTIC SECTION -->
-<section class="relative bg-[#020617] py-24 overflow-hidden">
+<!-- LAB SETUPS -->
+<section class="relative bg-slate-50 py-32 overflow-hidden font-sans">
+    
+    <div class="absolute -top-24 -left-24 w-1/2 h-1/2 bg-gradient-to-br from-cyan-100/50 to-transparent rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-24 -right-24 w-1/2 h-1/2 bg-gradient-to-tl from-indigo-100/50 to-transparent rounded-full blur-3xl"></div>
 
-    <!-- glow bg -->
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,255,0.12),transparent_60%)]"></div>
-
-    <div class="max-w-7xl mx-auto px-6 md:px-20 relative z-10">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
         
-        <!-- heading -->
-        <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Lab Setups</h2>
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
-                Advanced experiential STEM infrastructure designed for institutions of every scale. Modular labs that empower innovation, research and real-world engineering learning.
-            </p>
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-6">
+            <div class="max-w-2xl">
+                <h2 class="text-6xl font-black text-slate-900 tracking-tighter leading-none mb-6">
+                    Future-Ready <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Lab Infrastructure</span>
+                </h2>
+                <p class="text-slate-500 text-xl leading-relaxed">
+                    Modular STEM ecosystems engineered for high-impact research and immersive learning.
+                </p>
+            </div>
+            <div class="hidden md:block">
+                <div class="flex -space-x-4">
+                    <div class="w-14 h-14 rounded-full border-4 border-white bg-blue-500 flex items-center justify-center text-white shadow-lg">AI</div>
+                    <div class="w-14 h-14 rounded-full border-4 border-white bg-indigo-500 flex items-center justify-center text-white shadow-lg">IoT</div>
+                    <div class="w-14 h-14 rounded-full border-4 border-white bg-purple-500 flex items-center justify-center text-white shadow-lg">UAV</div>
+                    <div class="w-14 h-14 rounded-full border-4 border-white bg-pink-500 flex items-center justify-center text-white shadow-lg">ROBO</div>
+                    <div class="w-14 h-14 rounded-full border-4 border-white bg-green-500 flex items-center justify-center text-white shadow-lg">AR/VR</div>
+                    <div class="w-14 h-14 rounded-full border-4 border-white bg-orange-500 flex items-center justify-center text-white shadow-lg">PCB</div>
+                </div>
+            </div>
         </div>
 
-        <!-- cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-            <!-- SCHOOL -->
-            <div class="group relative bg-gradient-to-b from-slate-900 to-slate-800 border border-cyan-400/20 rounded-3xl p-8 hover:border-cyan-400/60 transition duration-500">
-                <div class="absolute -top-6 left-6 w-12 h-12 rounded-xl bg-cyan-400/20 flex items-center justify-center backdrop-blur">
-                    📘
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-[3rem] bg-white shadow-xl shadow-slate-200/60 hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-700">
+                <img src="school.png" 
+                     alt="Schools" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 transition-opacity group-hover:opacity-90"></div>
+                
+                <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                    <div class="mb-4 inline-flex items-center justify-center w-14 h-14 bg-blue-500/20 backdrop-blur-md border border-white/30 rounded-2xl text-2xl">📘</div>
+                    <h3 class="text-3xl font-bold text-white mb-3">For Schools</h3>
+                    <p class="text-slate-200 text-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        Foundational STEM discovery labs with robotics basics and creative coding pods.
+                    </p>
+                    <div class="mt-6 flex items-center text-blue-400 font-bold group-hover:translate-x-2 transition-transform">
+                        Explore Infrastructure →
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-white mt-6">For Schools</h3>
-                <p class="text-gray-400 text-sm mt-3">
-                    Foundational STEM discovery labs including robotics basics, maker stations, coding pods and creative engineering zones.
-                </p>
-                <button class="mt-6 text-cyan-400 text-sm font-semibold group-hover:translate-x-1 transition">Explore →</button>
             </div>
 
-            <!-- COLLEGE -->
-            <div class="group relative bg-gradient-to-b from-slate-900 to-slate-800 border border-indigo-400/20 rounded-3xl p-8 hover:border-indigo-400/60 transition duration-500">
-                <div class="absolute -top-6 left-6 w-12 h-12 rounded-xl bg-indigo-400/20 flex items-center justify-center backdrop-blur">
-                    🧠
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-[3rem] bg-white shadow-xl shadow-slate-200/60 hover:shadow-2xl hover:shadow-indigo-200/50 transition-all duration-700">
+                <img src="college.png" 
+                     alt="Colleges" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90"></div>
+                
+                <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                    <div class="mb-4 inline-flex items-center justify-center w-14 h-14 bg-indigo-500/20 backdrop-blur-md border border-white/30 rounded-2xl text-2xl">🧠</div>
+                    <h3 class="text-3xl font-bold text-white mb-3">For Colleges</h3>
+                    <p class="text-slate-200 text-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        Industry aligned innovation labs with AI experimentation and IoT clusters.
+                    </p>
+                    <div class="mt-6 flex items-center text-indigo-400 font-bold group-hover:translate-x-2 transition-transform">
+                        Explore Infrastructure →
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-white mt-6">For Colleges</h3>
-                <p class="text-gray-400 text-sm mt-3">
-                    Industry aligned innovation labs with IoT benches, AI experimentation clusters, UAV simulation rigs and embedded systems workstations.
-                </p>
-                <button class="mt-6 text-indigo-400 text-sm font-semibold group-hover:translate-x-1 transition">Explore →</button>
             </div>
 
-            <!-- UNIVERSITY -->
-            <div class="group relative bg-gradient-to-b from-slate-900 to-slate-800 border border-purple-400/20 rounded-3xl p-8 hover:border-purple-400/60 transition duration-500">
-                <div class="absolute -top-6 left-6 w-12 h-12 rounded-xl bg-purple-400/20 flex items-center justify-center backdrop-blur">
-                    🔬
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-[3rem] bg-white shadow-xl shadow-slate-200/60 hover:shadow-2xl hover:shadow-purple-200/50 transition-all duration-700">
+                <img src="university.png"
+                     alt="Universities" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90"></div>
+                
+                <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                    <div class="mb-4 inline-flex items-center justify-center w-14 h-14 bg-purple-500/20 backdrop-blur-md border border-white/30 rounded-2xl text-2xl">🔬</div>
+                    <h3 class="text-3xl font-bold text-white mb-3">For Universities</h3>
+                    <p class="text-slate-200 text-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        Advanced research ecosystems and digital twin simulation environments.
+                    </p>
+                    <div class="mt-6 flex items-center text-purple-400 font-bold group-hover:translate-x-2 transition-transform">
+                        Explore Infrastructure →
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-white mt-6">For Universities</h3>
-                <p class="text-gray-400 text-sm mt-3">
-                    Advanced research ecosystems with robotics fabrication cells, digital twin simulation walls and interdisciplinary tech innovation hubs.
-                </p>
-                <button class="mt-6 text-purple-400 text-sm font-semibold group-hover:translate-x-1 transition">Explore →</button>
             </div>
 
-            <!-- PRIVATE -->
-            <div class="group relative bg-gradient-to-b from-slate-900 to-slate-800 border border-teal-400/20 rounded-3xl p-8 hover:border-teal-400/60 transition duration-500">
-                <div class="absolute -top-6 left-6 w-12 h-12 rounded-xl bg-teal-400/20 flex items-center justify-center backdrop-blur">
-                    🏢
+             <div class="group relative aspect-[4/5] overflow-hidden rounded-[3rem] bg-white shadow-xl shadow-slate-200/60 hover:shadow-2xl hover:shadow-purple-200/50 transition-all duration-700">
+                <img src="private.png"
+                     alt="Universities" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90"></div>
+                
+                <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                    <div class="mb-4 inline-flex items-center justify-center w-14 h-14 bg-purple-500/20 backdrop-blur-md border border-white/30 rounded-2xl text-2xl">🔬</div>
+                    <h3 class="text-3xl font-bold text-white mb-3">For Private Institutions</h3>
+                    <p class="text-slate-200 text-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        Turning Curiosity into Capability with Real-Time Skill Development.
+                    </p>
+                    <div class="mt-6 flex items-center text-purple-400 font-bold group-hover:translate-x-2 transition-transform">
+                        Explore Infrastructure →
+                    </div>
                 </div>
-                <h3 class="text-xl font-bold text-white mt-6">Private Institutions</h3>
-                <p class="text-gray-400 text-sm mt-3">
-                    Custom turnkey STEM innovation spaces designed for training centers, academies and future-ready skill campuses.
-                </p>
-                <button class="mt-6 text-teal-400 text-sm font-semibold group-hover:translate-x-1 transition">Explore →</button>
+            </div> 
+
+            <!-- For Robotics & Automation Lab -->
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-[3rem] bg-white shadow-xl shadow-slate-200/60 hover:shadow-2xl hover:shadow-indigo-200/50 transition-all duration-700">
+                <img src="robotics.png" 
+                     alt="Colleges" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90"></div>
+                
+                <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                    <div class="mb-4 inline-flex items-center justify-center w-14 h-14 bg-indigo-500/20 backdrop-blur-md border border-white/30 rounded-2xl text-2xl">🧠</div>
+                    <h3 class="text-3xl font-bold text-white mb-3">Robotics & Automation Lab</h3>
+                    <p class="text-slate-200 text-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        Hands-On Robotics Innovation Turning Ideas into Intelligent Machines.
+                    </p>
+                    <div class="mt-6 flex items-center text-indigo-400 font-bold group-hover:translate-x-2 transition-transform">
+                        Explore Infrastructure →
+                    </div>
+                </div>
             </div>
 
+            <!-- For IoT & Smart Systems Lab -->
+             <div class="group relative aspect-[4/5] overflow-hidden rounded-[3rem] bg-white shadow-xl shadow-slate-200/60 hover:shadow-2xl hover:shadow-purple-200/50 transition-all duration-700">
+                <img src="iot.png"
+                     alt="Universities" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90"></div>
+                
+                <div class="absolute inset-0 p-10 flex flex-col justify-end">
+                    <div class="mb-4 inline-flex items-center justify-center w-14 h-14 bg-purple-500/20 backdrop-blur-md border border-white/30 rounded-2xl text-2xl">🔬</div>
+                    <h3 class="text-3xl font-bold text-white mb-3">For IoT & Smart Systems Lab</h3>
+                    <p class="text-slate-200 text-lg opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                        Building Smart Systems for a Connected, Future-Ready World.
+                    </p>
+                    <div class="mt-6 flex items-center text-purple-400 font-bold group-hover:translate-x-2 transition-transform">
+                        Explore Infrastructure →
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <!-- CTA -->
-        <div class="text-center mt-16">
-            <button class="bg-gradient-to-r from-cyan-500 to-indigo-500 text-white px-10 py-4 rounded-full font-bold tracking-wide shadow-xl hover:scale-105 transition">
-                View Complete Lab Infrastructure →
+        
+        <div class="mt-20 flex justify-center">
+            <button onclick="toggleHighlight()" class="group relative px-12 py-5 rounded-full bg-slate-900 text-white font-black text-xl overflow-hidden shadow-2xl transition-all hover:scale-105 active:scale-95">
+                <span class="relative z-10">Request Custom Setup →</span>
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
             </button>
         </div>
 
     </div>
 </section>
+
+<script>
+    function toggleHighlight() {
+        console.log("Premium Infrastructure Request Triggered");
+        // Add your interaction logic here
+    }
+</script>
+
+
 
 <section class="max-w-7xl mx-auto px-4 sm:px-6 -mt-10 md:-mt-12">
 
