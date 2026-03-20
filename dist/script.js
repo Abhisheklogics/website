@@ -18,9 +18,17 @@ let menu = document.getElementById('mobile-menu');
     }
 
 const currentPage = window.location.pathname.split('/').pop();
-    
- if (currentPage === 'index.html' || currentPage === '') {
-        document.getElementById('nav-home').classList.add('text-cyan-400');
-    } else if (currentPage === 'contact.html') {
-        document.getElementById('nav-contact').classList.add('text-cyan-400');
-    }
+
+const navMap = {
+    'index.html': 'nav-home',
+    '': 'nav-home',
+    'contact.html': 'nav-contact',
+    'kits.html': 'nav-kits',
+    'vlab.html': 'nav-vlab',
+    'labsetup.html': 'nav-labsetup'
+};
+
+if (navMap[currentPage]) {
+    document.getElementById(navMap[currentPage])?.classList.add('text-cyan-400');
+}
+   
