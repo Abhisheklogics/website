@@ -11,15 +11,39 @@
         .hero-gradient {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #083344 100%);
         }
+                .navbar::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:3px;
+
+background:linear-gradient(
+90deg,
+#00f0ff,
+#2ed3e2,
+#7b61ff,
+#00f0ff
+);
+
+background-size:300% 100%;
+animation:gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
+}
     </style>
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
 
 
-<nav class="absolute top-0 left-0 w-full z-50 bg-sky-950">
+<nav  class="sticky top-0 left-0 w-full z-50 bg-sky-950 navbar">
     <div class="flex flex-col w-full">
         <div class="flex justify-between items-center px-4 sm:px-6 md:px-20 h-16 md:h-20 text-white bg-gradient-to-b from-black/60 to-transparent">
-        
+         
             <div class="flex items-center gap-2 sm:gap-3">
                 <div class="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10">
                     <svg viewBox="0 0 100 100" class="w-full h-full fill-cyan-400">
@@ -28,23 +52,24 @@
                     </svg>
                 </div>
                 <div class="leading-none">
-                    <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight">AETHER</h1>
+                    <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight">SARKIT EdTech</h1>
                     <p class="text-[6px] sm:text-[8px] md:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] font-light text-gray-300">SOLUTIONS</p>
                 </div>
             </div>
+
             <div class="hidden md:flex items-center">
                 <ul class="flex items-center text-[11px] font-semibold tracking-[0.15em]">
-                    <li class="text-cyan-400 cursor-pointer"><a href="index.html">HOME</a></li>
-                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+                   <li id="nav-home" class="cursor-pointer"><a href="index.html">HOME</a></li>
+    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
 
                     <li class="relative group py-2">
                         <div class="flex flex-col items-center">
                             <span class="cursor-pointer">SOLUTIONS</span>
                             <div class="flex space-x-3 mt-1 font-normal text-gray-400 whitespace-nowrap">
-                                <span class="hover:text-white cursor-pointer">Lab Setups</span>
-                                <span class="hover:text-white cursor-pointer">Virtual Labs</span>
+                                <span class="hover:text-white cursor-pointer"><a href="labsetup.html">Lab Setups</a></span>
+                                <span class="hover:text-white cursor-pointer"><a href="vlab.html">Virtual Labs</a></span>
                                 <span class="hover:text-white cursor-pointer">Curriculum</span>
-                                <span class="hover:text-white cursor-pointer">Kits</span>
+                                <span class="hover:text-white cursor-pointer"><a href="kits.html">Kits</a></span>
                             </div>
                         </div>
                     </li>
@@ -54,7 +79,7 @@
                     <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
                     <li class="hover:text-cyan-400 cursor-pointer uppercase">COMPANY</li>
                     <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
-                    <li class="hover:text-cyan-400 cursor-pointer uppercase"><a href="contact.html">CONTACT</a></li>
+                   <li id="nav-contact" class="cursor-pointer uppercase"><a href="contact.html">CONTACT</a></li>
                 </ul>
             </div>
 

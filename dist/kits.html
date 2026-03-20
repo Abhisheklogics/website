@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aether Kits</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+.navbar::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:3px;
+
+background:linear-gradient(
+90deg,
+#00f0ff,
+#2ed3e2,
+#7b61ff,
+#00f0ff
+);
+
+background-size:300% 100%;
+animation:gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
+}
+body{
+margin:0;
+font-family:Inter;
+background:#020617;
+color:white;
+}
+
+/* NAV */
+
+
+
+
+
+/* HERO */
+
+.hero{
+padding:180px 60px 100px;
+background:radial-gradient(circle at right,#0ea5e9 0%, transparent 40%);
+}
+
+.hero h1{
+font-size:70px;
+max-width:700px;
+}
+
+.hero p{
+color:#94a3b8;
+max-width:500px;
+margin-top:20px;
+}
+
+/* FILTER */
+
+.filters{
+display:flex;
+gap:15px;
+padding:40px 60px;
+flex-wrap:wrap;
+}
+
+.filter-btn{
+padding:10px 20px;
+border-radius:30px;
+border:1px solid rgba(255,255,255,.1);
+cursor:pointer;
+font-size:13px;
+}
+
+.filter-btn.active{
+background:#22d3ee;
+color:black;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+padding:40px 60px;
+}
+
+/* CARD */
+
+.card{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.06);
+padding:30px;
+border-radius:24px;
+transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#22d3ee;
+}
+
+.card::before{
+content:"";
+position:absolute;
+width:200px;
+height:200px;
+background:#22d3ee;
+filter:blur(100px);
+opacity:.15;
+top:-50px;
+right:-50px;
+}
+
+.card h3{
+margin-top:20px;
+}
+
+.card p{
+font-size:13px;
+color:#94a3b8;
+}
+
+/* FEATURED */
+
+.featured{
+margin:80px 60px;
+padding:50px;
+border-radius:30px;
+background:linear-gradient(135deg,#06b6d4,#2563eb);
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.featured h2{
+font-size:40px;
+}
+
+.featured button{
+background:black;
+color:white;
+border:none;
+padding:15px 30px;
+border-radius:30px;
+cursor:pointer;
+}
+
+/* CTA */
+
+.cta{
+text-align:center;
+padding:120px 20px;
+}
+
+.cta h2{
+font-size:50px;
+}
+
+.cta button{
+margin-top:30px;
+background:#22d3ee;
+border:none;
+padding:18px 40px;
+border-radius:40px;
+font-weight:700;
+cursor:pointer;
+}
+
+</style>
+<link rel="stylesheet" href="style.css"></link>
+</head>
+
+<body>
+
+<nav  class="sticky top-0 left-0 w-full z-50 bg-sky-950 navbar">
+    <div class="flex flex-col w-full">
+        <div class="flex justify-between items-center px-4 sm:px-6 md:px-20 h-16 md:h-20 text-white bg-gradient-to-b from-black/60 to-transparent">
+         
+            <div class="flex items-center gap-2 sm:gap-3">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10">
+                    <svg viewBox="0 0 100 100" class="w-full h-full fill-cyan-400">
+                        <path d="M50 10 L10 90 L90 90 Z M50 30 L30 75 L70 75 Z" opacity="0.8"/>
+                        <circle cx="50" cy="50" r="10" class="fill-white"/>
+                    </svg>
+                </div>
+                <div class="leading-none">
+                    <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight">SARKIT EdTech</h1>
+                    <p class="text-[6px] sm:text-[8px] md:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] font-light text-gray-300">SOLUTIONS</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center">
+                <ul class="flex items-center text-[11px] font-semibold tracking-[0.15em]">
+                   <li id="nav-home" class="cursor-pointer"><a href="index.html">HOME</a></li>
+    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+
+                    <li class="relative group py-2">
+                        <div class="flex flex-col items-center">
+                            <span class="cursor-pointer">SOLUTIONS</span>
+                            <div class="flex space-x-3 mt-1 font-normal text-gray-400 whitespace-nowrap">
+                                <span class="hover:text-white cursor-pointer"><a href="labsetup.html">Lab Setups</a></span>
+                                <span class="hover:text-white cursor-pointer"><a href="vlab.html">Virtual Labs</a></span>
+                                <span class="hover:text-white cursor-pointer">Curriculum</span>
+                                <span class="hover:text-white cursor-pointer"><a href="kits.html">Kits</a></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+                    <li class="hover:text-cyan-400 cursor-pointer uppercase">RESOURCES</li>
+                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+                    <li class="hover:text-cyan-400 cursor-pointer uppercase">COMPANY</li>
+                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+                   <li id="nav-contact" class="cursor-pointer uppercase"><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">☰</button>
+        </div>
+    </div>
+</nav>
+
+
+<section class="hero">
+
+<h1>Explore Future-Ready Learning Kits</h1>
+
+<p>
+Hands-on STEM kits designed for AI, Robotics, IoT and Innovation driven classrooms.
+</p>
+
+</section>
+
+
+<div class="filters">
+
+<div class="filter-btn active">All Kits</div>
+<div class="filter-btn">Electronics</div>
+<div class="filter-btn">Robotics</div>
+<div class="filter-btn">AI</div>
+<div class="filter-btn">Aerospace</div>
+
+</div>
+
+
+<section class="featured">
+
+<div>
+<h2>Featured Innovation Kit</h2>
+<p>Complete AI + Robotics + IoT lab in one box.</p>
+</div>
+
+<button>View Kit</button>
+
+</section>
+
+
+
+<section class="grid" id="kitGrid">
+
+<div class="card">
+<h3>Arduino Starter Kit</h3>
+<p>Learn circuits, sensors and embedded programming.</p>
+</div>
+
+<div class="card">
+<h3>LEGO STEM Kit</h3>
+<p>Mechanical design and logic building activities.</p>
+</div>
+
+<div class="card">
+<h3>IoT Innovation Kit</h3>
+<p>Cloud dashboards, ESP32 and real time monitoring.</p>
+</div>
+
+<div class="card">
+<h3>UAV Drone Kit</h3>
+<p>Flight control, aerodynamics and mission planning.</p>
+</div>
+
+<div class="card">
+<h3>Robotics AI Kit</h3>
+<p>Computer vision robotics and automation learning.</p>
+</div>
+
+<div class="card">
+<h3>Smart City Kit</h3>
+<p>Urban tech simulation using sensors and AI.</p>
+</div>
+
+<div class="card">
+<h3>Renewable Energy Kit</h3>
+<p>Solar tracking, wind energy and storage models.</p>
+</div>
+
+<div class="card">
+<h3>Machine Learning Kit</h3>
+<p>Edge AI models and training experiments.</p>
+</div>
+
+</section>
+
+
+
+<section class="cta">
+
+<h2>Build Innovation Classrooms</h2>
+
+<button>Request Catalogue</button>
+
+</section>
+
+
+<script>
+
+/* FILTER UI */
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+btn.onclick=()=>{
+document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+btn.classList.add("active");
+}
+})
+
+</script>
+
+</body>
+</html>
