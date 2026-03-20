@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+<<<<<<< HEAD
 .navbar::after{
 content:"";
 position:absolute;
@@ -32,6 +33,9 @@ animation:gradientMove 6s linear infinite;
 0%{background-position:0% 50%;}
 100%{background-position:100% 50%;}
 }
+=======
+
+>>>>>>> 7602f13a519ff13a9da409b6838c955ed31edcb7
 body{
 margin:0;
 font-family:Inter;
@@ -41,9 +45,44 @@ color:white;
 
 /* NAV */
 
+<<<<<<< HEAD
 
 
 
+=======
+nav{
+position:fixed;
+width:100%;
+top:0;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+background:rgba(2,6,23,.6);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+.logo{
+font-weight:800;
+letter-spacing:2px;
+}
+
+nav ul{
+display:flex;
+gap:40px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#94a3b8;
+font-size:13px;
+}
+
+nav a:hover{
+color:#22d3ee;
+}
+>>>>>>> 7602f13a519ff13a9da409b6838c955ed31edcb7
 
 /* HERO */
 
@@ -180,11 +219,15 @@ cursor:pointer;
 }
 
 </style>
+<<<<<<< HEAD
 <link rel="stylesheet" href="style.css"></link>
+=======
+>>>>>>> 7602f13a519ff13a9da409b6838c955ed31edcb7
 </head>
 
 <body>
 
+<<<<<<< HEAD
 <nav  class="sticky top-0 left-0 w-full z-50 bg-sky-950 navbar">
     <div class="flex flex-col w-full">
         <div class="flex justify-between items-center px-4 sm:px-6 md:px-20 h-16 md:h-20 text-white bg-gradient-to-b from-black/60 to-transparent">
@@ -231,6 +274,19 @@ cursor:pointer;
             <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">☰</button>
         </div>
     </div>
+=======
+<nav>
+
+<div class="logo">AETHER</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Labs</a></li>
+<li><a href="#">Kits</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+
+>>>>>>> 7602f13a519ff13a9da409b6838c955ed31edcb7
 </nav>
 
 
