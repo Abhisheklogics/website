@@ -146,54 +146,51 @@ width:100%;
 <body>
 
 
-<nav  class="sticky top-0 left-0 w-full z-50 bg-sky-950 navbar">
-    <div class="flex flex-col w-full">
-        <div class="flex justify-between items-center px-4 sm:px-6 md:px-20 h-16 md:h-20 text-white bg-gradient-to-b from-black/60 to-transparent">
-         
-            <div class="flex items-center gap-2 sm:gap-3">
-                <div class="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10">
-                   <div class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 overflow-hidden bg-white/10 rounded-lg">
-        <img src="favicon.ico" alt="Logo" class="w-full h-full object-contain p-1" />
+<nav class="sticky top-0 left-0 w-full z-50 bg-sky-950 navbar">
+
+<!-- navbar class already hai ✓ — bas CSS mein position:absolute check karo -->
+  <div class="flex flex-col w-full">
+    <div class="flex justify-between items-center px-4 sm:px-6 md:px-20 h-16 md:h-20 text-white bg-gradient-to-b from-black/60 to-transparent">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10">
+         <div class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 overflow-hidden  rounded-lg">
+        <img src="favicon.ico" alt="Logo" class="w-full h-full object-contain p-1 rounded-xl" />
     </div>
-                </div>
-                <div class="leading-none">
-                    <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight">SARKIT EdTech</h1>
-                    <p class="text-[6px] sm:text-[8px] md:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] font-light text-gray-300">SOLUTIONS</p>
-                </div>
-            </div>
-
-            <div class="hidden md:flex items-center">
-                <ul class="flex items-center text-[11px] font-semibold tracking-[0.15em]">
-                   <li id="nav-home" class="cursor-pointer"><a href="index.html">HOME</a></li>
-    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
-
-                    <li class="relative group py-2">
-                        <div class="flex flex-col items-center">
-                            <span class="cursor-pointer">SOLUTIONS</span>
-                            <div class="flex space-x-3 mt-1 font-normal text-gray-400 whitespace-nowrap">
-                                <span class="hover:text-white cursor-pointer"><a href="labsetup.html">Lab Setups</a></span>
-                                <span class="hover:text-white cursor-pointer"><a href="vlab.html">Virtual Labs</a></span>
-                                <span class="hover:text-white cursor-pointer"><a href="c.html">Curriculum</a></span>
-                                <span class="hover:text-white cursor-pointer"><a href="kits.html">Kits</a></span>
-                            </div>
-                        </div>
-                    </li>
-
-                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
-                    <li class="hover:text-cyan-400 cursor-pointer uppercase">RESOURCES</li>
-                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
-                    <li class="hover:text-cyan-400 cursor-pointer uppercase">COMPANY</li>
-                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
-                   <li id="nav-contact" class="cursor-pointer uppercase"><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </div>
-
-            <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">☰</button>
         </div>
+        <div class="leading-none">
+          <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight"><a href="index.html">SARKIT EdTech</a></h1>
+          <p class="text-[6px] sm:text-[8px] md:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] font-light text-gray-300">SOLUTIONS</p>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center">
+        <ul class="flex items-center text-[11px] font-semibold tracking-[0.15em]">
+          <li class="cursor-pointer hover:text-cyan-400 transition"><a href="index.html">HOME</a></li>
+          <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+          <li class="relative group py-2">
+            <div class="flex flex-col items-center">
+              <span class="cursor-pointer hover:text-cyan-400 transition">SOLUTIONS</span>
+              <div class="flex space-x-3 mt-1 font-normal text-gray-400 whitespace-nowrap">
+                <span class="text-cyan-400 font-semibold"><a href="labsetup.html">Lab Setups</a></span>
+                <span class="hover:text-white cursor-pointer transition"><a href="vlab.html">Virtual Labs</a></span>
+                <span class="hover:text-white cursor-pointer transition"><a href="c.html">Curriculum</a></span>
+                <span class="hover:text-white cursor-pointer transition"><a href="kits.html">Kits</a></span>
+              </div>
+            </div>
+          </li>
+          <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+          <li class="hover:text-cyan-400 cursor-pointer uppercase transition">RESOURCES</li>
+          <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+          <li class="hover:text-cyan-400 cursor-pointer uppercase transition">COMPANY</li>
+          <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+          <li class="cursor-pointer uppercase hover:text-cyan-400 transition"><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">☰</button>
     </div>
-    
+  </div>
 </nav>
 
+<!-- Mobile Menu -->
 <div id="mobile-menu" class="fixed inset-0 bg-black/50 z-50 md:hidden">
   <div class="absolute right-0 top-0  h-fit w-64 bg-sky-900 text-white p-6 overflow-y-auto">
     <button id="menu-close" class="absolute top-4 right-4 text-3xl">&times;</button>
