@@ -32,3 +32,4 @@ if (navMap[currentPage]) {
     document.getElementById(navMap[currentPage])?.classList.add('text-cyan-400');
 }
    
+

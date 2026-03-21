@@ -829,10 +829,7 @@ body { font-family:'Inter',sans-serif; background:#020617; }
 <script src="./script.js"></script>
 <script>
   // Mobile menu
-  document.getElementById('menu-btn').addEventListener('click',()=>document.getElementById('mobile-menu').classList.add('open'));
-  document.getElementById('menu-close').addEventListener('click',()=>document.getElementById('mobile-menu').classList.remove('open'));
-  document.getElementById('mobile-menu').addEventListener('click',e=>{if(e.target===document.getElementById('mobile-menu'))document.getElementById('mobile-menu').classList.remove('open');});
-
+ 
   // Audience switcher
   function switchAud(type, btn) {
     document.querySelectorAll('.aud-panel').forEach(p=>p.classList.remove('active'));
