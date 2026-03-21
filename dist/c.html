@@ -152,21 +152,21 @@ animation:gradientMove 6s linear infinite;
         </div>
     </div>
 </nav>
-<div id="mobile-menu" class="fixed inset-0 bg-black/50 z-50 md:hidden translate-x-full transition-transform duration-300 rounded-lg">
-    <div class="absolute right-0 top-0 h-fit w-64 bg-sky-900 text-white p-6">
-        <button id="menu-close" class="absolute top-4 right-4 text-3xl">&times;</button>
-        <ul class="mt-4 space-y-4 text-sm font-semibold">
-            <li class="text-cyan-100" id="nav-home"><a href="index.html">HOME</a></li>
-            <li class="border-t border-white/10 pt-2">SOLUTIONS</li>
- <li  class="pl-4 text-xs text-gray-300" id="nav-labsetup"><a href="labsetup.html"> Lab Setups</a></li>
-            <li class="pl-4 text-xs text-gray-300"  id="nav-vlab"><a href="vlab.html">Virtual Labs</a></li>
-            <li class="pl-4 text-xs text-gray-300"><a href="c.html">Curriculum</a></li>
-            <li class="pl-4 text-xs text-gray-300" id="nav-kits"><a href="kits.html">Kits</a></li>
-            <li class="border-t border-white/10 pt-2">RESOURCES</li>
-            <li>COMPANY</li>
-            <li><a href="contact.html" id="nav-contact">CONTACT</a></li>
-        </ul>
-    </div>
+<div id="mobile-menu" class="fixed inset-0 bg-black/50 z-50 md:hidden">
+  <div class="absolute right-0 top-0  h-fit w-64 bg-sky-900 text-white p-6 overflow-y-auto">
+    <button id="menu-close" class="absolute top-4 right-4 text-3xl">&times;</button>
+    <ul class="mt-10 space-y-4 text-sm font-semibold">
+      <li class="text-cyan-100"><a href="index.html">HOME</a></li>
+      <li class="border-t border-white/10 pt-2 text-[10px] text-gray-400 uppercase tracking-widest">Solutions</li>
+      <li class="pl-4 text-xs text-cyan-400 font-bold"><a href="labsetup.html">↳ Lab Setups</a></li>
+      <li class="pl-4 text-xs text-gray-300"><a href="vlab.html">↳ Virtual Labs</a></li>
+      <li class="pl-4 text-xs text-gray-300"><a href="c.html">↳ Curriculum</a></li>
+      <li class="pl-4 text-xs text-gray-300"><a href="kits.html">↳ Kits</a></li>
+      <li class="border-t border-white/10 pt-2">RESOURCES</li>
+      <li>COMPANY</li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </div>
 </div>
 
 
@@ -452,8 +452,28 @@ animation:gradientMove 6s linear infinite;
 
 
 <!-- ══════════ FOOTER ══════════ -->
-<footer class="border-t border-white/5 py-10 text-center text-gray-500 text-sm">
-  © 2026 SARKIT EdTech Solutions. All rights reserved.
+<footer class="bg-slate-900 text-white py-8 sm:py-12 mt-12 px-4 sm:px-6 md:px-20 border-t border-white/10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
+        <div>
+            <h3 class="text-lg sm:text-xl font-bold text-cyan-400 mb-3 sm:mb-4 uppercase tracking-tighter">SARKIT EdTech</h3>
+            <p class="text-xs sm:text-sm text-gray-400">Comprehensive STEM, AI, and Robotics Solutions for schools and educational institutions globally.</p>
+        </div>
+        <div>
+            <h4 class="font-bold mb-3 sm:mb-4 uppercase text-[10px] sm:text-xs tracking-widest text-gray-400">Navigation</h4>
+            <ul class="text-xs sm:text-sm space-y-1.5 sm:space-y-2 text-gray-300">
+                <li class="hover:text-cyan-400 cursor-pointer"><a href="vlab.html">Virtual Labs</a></li>
+                <li class="hover:text-cyan-400 cursor-pointer"><a href="kits.html">Educational Kits</a></li>
+                <li class="hover:text-cyan-400 cursor-pointer"><a href="contact.html">Contact Support</a></li>
+            </ul>
+        </div>
+        <div class="sm:col-span-2 md:col-span-1">
+            <h4 class="font-bold mb-3 sm:mb-4 uppercase text-[10px] sm:text-xs tracking-widest text-gray-400">Location</h4>
+            <p class="text-xs sm:text-sm text-gray-400 leading-relaxed">Innovation Hub, Sector 12<br>Business District, Agra<br>UP, India</p>
+        </div>
+    </div>
+    <div class="text-center mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-white/5 text-[8px] sm:text-[10px] text-gray-300 uppercase tracking-widest">
+        © 2024 SARKIT EdTech. Built for Future Innovators.
+    </div>
 </footer>
 
 
