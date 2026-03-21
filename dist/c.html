@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curriculum & Academic Solutions | SARKIT EdTech</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+  body {
+        font-family: 'Inter', sans-serif; background: #020617; color: #fff; overflow-x: hidden; }
+ 
+
+  /* ── NAVBAR ── */
+  .navbar { position: sticky; top: 0; left: 0; width: 100%; z-index: 50; background: rgba(2,6,23,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .navbar::after { content:""; position:absolute; left:0; bottom:0; width:100%; height:2px; background:linear-gradient(90deg,#00f0ff,#7b61ff,#00f0ff); background-size:300% 100%; animation:gradMove 6s linear infinite; }
+  @keyframes gradMove { 0%{background-position:0%} 100%{background-position:300%} }
+
+  /* Mobile menu */
+  #mobile-menu { position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:60; transform:translateX(100%); transition:transform .3s ease; }
+  #mobile-menu.open { transform:translateX(0); }
+
+  /* ── HERO ── */
+  .grid-bg {
+    background-image: linear-gradient(rgba(0,240,255,.03) 1px,transparent 1px), linear-gradient(90deg,rgba(0,240,255,.03) 1px,transparent 1px);
+    background-size: 44px 44px;
+  }
+  .gradient-text { background:linear-gradient(90deg,#00f0ff,#7b61ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+  /* ── SERVICE CARDS ── */
+  .svc-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .svc-card::before {
+    content:""; position:absolute; top:0; left:0; right:0; height:2px;
+    opacity:0; transition:opacity .35s;
+    background: linear-gradient(90deg,#00f0ff,#7b61ff);
+    border-radius: 24px 24px 0 0;
+  }
+  .svc-card:hover { transform:translateY(-7px); border-color:rgba(0,240,255,.35); box-shadow:0 20px 50px rgba(0,240,255,.09); }
+  .svc-card:hover::before { opacity:1; }
+
+  .svc-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:1.2rem; flex-shrink:0; }
+
+  .svc-tag { display:inline-block; font-size:.65rem; font-family:'Syne',sans-serif; font-weight:700; letter-spacing:.1em; padding:.22rem .7rem; border-radius:999px; border:1px solid rgba(0,240,255,.2); background:rgba(0,240,255,.07); color:#00f0ff; text-transform:uppercase; }
+
+  /* bullet list inside cards */
+  .svc-list { list-style:none; padding:0; margin:.75rem 0 0; }
+  .svc-list li { font-size:.82rem; color:#94a3b8; padding:.28rem 0; padding-left:1.1rem; position:relative; }
+  .svc-list li::before { content:"›"; position:absolute; left:0; color:#00f0ff; font-weight:700; }
+
+  /* ── NUMBER BADGE ── */
+  .num-badge { font-family:'Syne',sans-serif; font-size:.65rem; font-weight:800; letter-spacing:.1em; width:28px; height:28px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:rgba(0,240,255,.12); color:#00f0ff; margin-bottom:.75rem; }
+
+  /* ── BADGE ── */
+  .badge { display:inline-block; font-size:.65rem; font-family:'Syne',sans-serif; letter-spacing:.12em; font-weight:700; padding:.25rem .75rem; border-radius:999px; background:rgba(0,240,255,.1); color:#00f0ff; border:1px solid rgba(0,240,255,.2); text-transform:uppercase; }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* ── CTA ── */
+  .cta-glow { position:absolute; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle,rgba(0,240,255,.13),transparent 70%); left:50%; bottom:-250px; transform:translateX(-50%); pointer-events:none; }
+
+  /* ── FADE UP ── */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+  .fade-up { animation:fadeUp .7s ease both; }
+  .d1{animation-delay:.1s} .d2{animation-delay:.22s} .d3{animation-delay:.34s}
+
+  /* ── TIMELINE STEP ── */
+  .step-dot { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-weight:800; font-size:.8rem; flex-shrink:0; }
+  
+.navbar::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:3px;
+
+background:linear-gradient(
+90deg,
+#00f0ff,
+#2ed3e2,
+#7b61ff,
+#00f0ff
+);
+
+background-size:300% 100%;
+animation:gradientMove 6s linear infinite;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════ NAVBAR (exact same as given) ══════════ -->
+<nav class="sticky top-0 left-0 w-full z-50 bg-sky-950 navbar">
+    <div class="flex flex-col w-full">
+        <div class="flex justify-between items-center px-4 sm:px-6 md:px-20 h-16 md:h-20 text-white bg-gradient-to-b from-black/60 to-transparent">
+         
+            <div class="flex items-center gap-2 sm:gap-3">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10">
+                     <div class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 overflow-hidden bg-white/10 rounded-lg">
+        <img src="favicon.ico" alt="Logo" class="w-full h-full object-contain p-1" />
+    </div>
+                </div>
+                <div class="leading-none">
+                    <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight">SARKIT EdTech</h1>
+                    <p class="text-[6px] sm:text-[8px] md:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] font-light text-gray-300">SOLUTIONS</p>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center">
+                <ul class="flex items-center text-[11px] font-semibold tracking-[0.15em]">
+                   <li id="nav-home" class="cursor-pointer"><a href="index.html">HOME</a></li>
+    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+
+                    <li class="relative group py-2">
+                        <div class="flex flex-col items-center">
+                            <span class="cursor-pointer">SOLUTIONS</span>
+                            <div class="flex space-x-3 mt-1 font-normal text-gray-400 whitespace-nowrap">
+                                <span class="hover:text-white cursor-pointer"><a href="labsetup.html">Lab Setups</a></span>
+                                <span class="hover:text-white cursor-pointer"><a href="vlab.html">Virtual Labs</a></span>
+                                <span class="hover:text-white cursor-pointer"><a href="c.html">Curriculum</a></span>
+                                <span class="hover:text-white cursor-pointer"><a href="kits.html">Kits</a></span>
+                            </div>
+                        </div>
+                    </li>
+
+                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+                    <li class="hover:text-cyan-400 cursor-pointer uppercase">RESOURCES</li>
+                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+                    <li class="hover:text-cyan-400 cursor-pointer uppercase">COMPANY</li>
+                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+                   <li id="nav-contact" class="cursor-pointer uppercase"><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">☰</button>
+        </div>
+    </div>
+</nav>
+<div id="mobile-menu" class="fixed inset-0 bg-black/50 z-50 md:hidden translate-x-full transition-transform duration-300 rounded-lg">
+    <div class="absolute right-0 top-0 h-fit w-64 bg-sky-900 text-white p-6">
+        <button id="menu-close" class="absolute top-4 right-4 text-3xl">&times;</button>
+        <ul class="mt-4 space-y-4 text-sm font-semibold">
+            <li class="text-cyan-100" id="nav-home"><a href="index.html">HOME</a></li>
+            <li class="border-t border-white/10 pt-2">SOLUTIONS</li>
+ <li  class="pl-4 text-xs text-gray-300" id="nav-labsetup"><a href="labsetup.html"> Lab Setups</a></li>
+            <li class="pl-4 text-xs text-gray-300"  id="nav-vlab"><a href="vlab.html">Virtual Labs</a></li>
+            <li class="pl-4 text-xs text-gray-300"><a href="c.html">Curriculum</a></li>
+            <li class="pl-4 text-xs text-gray-300" id="nav-kits"><a href="kits.html">Kits</a></li>
+            <li class="border-t border-white/10 pt-2">RESOURCES</li>
+            <li>COMPANY</li>
+            <li><a href="contact.html" id="nav-contact">CONTACT</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- ══════════ HERO ══════════ -->
+<section class="grid-bg relative pt-28 pb-20 px-5 sm:px-8 md:px-20 overflow-hidden">
+  <div class="absolute w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-[160px] top-[-180px] right-[-100px] pointer-events-none"></div>
+  <div class="absolute w-[300px] h-[300px] rounded-full bg-indigo-500/10 blur-[120px] bottom-0 left-[-60px] pointer-events-none"></div>
+
+  <div class="max-w-3xl">
+    <span class="badge mb-5 inline-block fade-up">For Schools · Academic Solutions</span>
+    <h1 class="text-4xl sm:text-5xl md:text-[4.2rem] font-extrabold leading-tight mb-5 fade-up d1">
+      Curriculum &<br><span class="gradient-text">Academic Solutions</span>
+    </h1>
+    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mb-10 leading-relaxed fade-up d2">
+      NEP 2020-aligned, future-ready curriculum frameworks, teacher training programs, student skill development and complete digital transformation — built for modern schools.
+    </p>
+    <div class="flex flex-wrap gap-4 fade-up d3">
+      <a href="contact.html" class="bg-gradient-to-r from-cyan-400 to-sky-500 text-black px-8 py-3.5 rounded-full font-bold shadow-lg shadow-cyan-500/25 hover:scale-105 transition text-sm sm:text-base">
+        Get Free Consultation
+      </a>
+      <a href="#services" class="border border-white/20 text-white px-8 py-3.5 rounded-full font-semibold hover:border-cyan-400/60 hover:text-cyan-400 transition text-sm sm:text-base">
+        Explore All Services
+      </a>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl fade-up d3">
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+      <div class="text-2xl font-extrabold text-cyan-400" style="font-family:'Syne',sans-serif">9</div>
+      <div class="text-xs text-gray-400 mt-1">Service Areas</div>
+    </div>
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+      <div class="text-2xl font-extrabold text-sky-400" style="font-family:'Syne',sans-serif">NEP</div>
+      <div class="text-xs text-gray-400 mt-1">2020 Aligned</div>
+    </div>
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+      <div class="text-2xl font-extrabold text-indigo-400" style="font-family:'Syne',sans-serif">K–12</div>
+      <div class="text-xs text-gray-400 mt-1">All Grades</div>
+    </div>
+    <div class="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+      <div class="text-2xl font-extrabold text-purple-400" style="font-family:'Syne',sans-serif">360°</div>
+      <div class="text-xs text-gray-400 mt-1">School Support</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ SERVICES GRID ══════════ -->
+<section id="services" class="py-24 px-5 sm:px-8 md:px-20 border-t border-white/5">
+
+  <div class="mb-14 reveal">
+    <span class="badge mb-4">All Services</span>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-3">Everything Your School Needs</h2>
+    <p class="text-gray-400 max-w-xl text-sm sm:text-base leading-relaxed">
+      From curriculum design to digital transformation — comprehensive solutions for schools to build tomorrow's innovators.
+    </p>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- 1. Curriculum & Academic Solutions -->
+    <div class="svc-card reveal">
+      <div class="num-badge">01</div>
+      <div class="svc-icon bg-cyan-400/15 text-cyan-400">📚</div>
+      <h3 class="text-lg font-bold mb-1">Curriculum & Academic Solutions</h3>
+      <p class="text-gray-400 text-sm mb-3 leading-relaxed">NEP 2020-aligned curriculum designed for real-world learning outcomes and 21st century skills.</p>
+      <ul class="svc-list">
+        <li>NEP 2020 aligned curriculum</li>
+        <li>STEM / AI / Coding syllabus</li>
+        <li>Activity-based learning modules</li>
+        <li>Digital content & lesson plans</li>
+      </ul>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="svc-tag">NEP 2020</span>
+        <span class="svc-tag">K–12</span>
+      </div>
+    </div>
+
+    <!-- 2. Teacher Training -->
+    <div class="svc-card reveal" style="transition-delay:.07s">
+      <div class="num-badge">02</div>
+      <div class="svc-icon bg-sky-400/15 text-sky-400">👩‍🏫</div>
+      <h3 class="text-lg font-bold mb-1">Teacher Training & Enablement</h3>
+      <p class="text-gray-400 text-sm mb-3 leading-relaxed">Empowering educators with cutting-edge skills, tools and certification programs.</p>
+      <ul class="svc-list">
+        <li>AI & coding training for teachers</li>
+        <li>STEM pedagogy training</li>
+        <li>Lesson planning tools</li>
+        <li>Certification programs</li>
+      </ul>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="svc-tag">Certified</span>
+        <span class="svc-tag">Hands-on</span>
+      </div>
+    </div>
+
+    <!-- 3. Student Skill Development -->
+    <div class="svc-card reveal" style="transition-delay:.14s">
+      <div class="num-badge">03</div>
+      <div class="svc-icon bg-indigo-400/15 text-indigo-400">🎓</div>
+      <h3 class="text-lg font-bold mb-1">Student Skill Development</h3>
+      <p class="text-gray-400 text-sm mb-3 leading-relaxed">Future-ready programs in coding, AI, robotics and emerging technologies for students.</p>
+      <ul class="svc-list">
+        <li>Coding — Scratch & Python</li>
+        <li>AI & Data Science</li>
+        <li>Robotics & Automation</li>
+        <li>IoT & Embedded systems</li>
+        <li>Drone & emerging tech skills</li>
+      </ul>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="svc-tag">Project-based</span>
+        <span class="svc-tag">All levels</span>
+      </div>
+    </div>
+
+    <!-- 4. Workshops & Bootcamps -->
+    <div class="svc-card reveal" style="transition-delay:.21s">
+      <div class="num-badge">04</div>
+      <div class="svc-icon bg-teal-400/15 text-teal-400">🛠️</div>
+      <h3 class="text-lg font-bold mb-1">Workshops & Bootcamps</h3>
+      <p class="text-gray-400 text-sm mb-3 leading-relaxed">Immersive learning experiences from awareness sessions to full innovation challenges.</p>
+      <ul class="svc-list">
+        <li>1-day awareness sessions</li>
+        <li>Hands-on workshops</li>
+        <li>Summer / winter camps</li>
+        <li>Hackathons & innovation challenges</li>
+      </ul>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="svc-tag">On-site</span>
+        <span class="svc-tag">Bootcamp</span>
+      </div>
+    </div>
+
+    <!-- 5. ATL Services -->
+    <div class="svc-card reveal" style="transition-delay:.28s">
+      <div class="num-badge">05</div>
+      <div class="svc-icon bg-orange-400/15 text-orange-400">⚗️</div>
+      <h3 class="text-lg font-bold mb-1">ATL (Atal Tinkering Lab) Services</h3>
+      <p class="text-gray-400 text-sm mb-3 leading-relaxed">End-to-end ATL setup, management and innovation mentoring aligned with NITI Aayog guidelines.</p>
+      <ul class="svc-list">
+        <li>Complete ATL setup</li>
+        <li>Equipment supply</li>
+        <li>Activity planning</li>
+        <li>Innovation mentoring</li>
+        <li>ATL competitions</li>
+      </ul>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="svc-tag">NITI Aayog</span>
+        <span class="svc-tag">ATL Ready</span>
+      </div>
+    </div>
+
+    <!-- 6. School Digital Transformation -->
+    <div class="svc-card reveal" style="transition-delay:.35s">
+      <div class="num-badge">06</div>
+      <div class="svc-icon bg-pink-400/15 text-pink-400">🖥️</div>
+      <h3 class="text-lg font-bold mb-1">School Digital Transformation</h3>
+      <p class="text-gray-400 text-sm mb-3 leading-relaxed">Smart classrooms, AI-powered learning platforms and personalized learning systems for the future school.</p>
+      <ul class="svc-list">
+        <li>Smart classroom solutions</li>
+        <li>Learning Management Systems (LMS)</li>
+        <li>AI-powered learning platforms</li>
+        <li>Personalized learning systems</li>
+      </ul>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="svc-tag">Smart Campus</span>
+        <span class="svc-tag">AI-powered</span>
+      </div>
+    </div>
+
+    <!-- 7. Annual Programs -->
+    <div class="svc-card reveal" style="transition-delay:.42s">
+      <div class="num-badge">07</div>
+      <div class="svc-icon bg-yellow-400/15 text-yellow-400">📅</div>
+      <h3 class="text-lg font-bold mb-1">Annual Programs</h3>
+      <p class="text-gray-400 text-sm mb-3 leading-relaxed">Subscription-based weekly STEM/AI classes with continuous assessments and project showcases.</p>
+      <ul class="svc-list">
+        <li>Weekly STEM / AI classes</li>
+        <li>Continuous assessments</li>
+        <li>Project-based learning</li>
+        <li>Competitions & showcases</li>
+      </ul>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="svc-tag">Subscription</span>
+        <span class="svc-tag">Year-round</span>
+      </div>
+    </div>
+
+    <!-- 8. Innovation & Research Programs -->
+    <div class="svc-card reveal" style="transition-delay:.49s">
+      <div class="num-badge">08</div>
+      <div class="svc-icon bg-green-400/15 text-green-400">💡</div>
+      <h3 class="text-lg font-bold mb-1">Innovation & Research Programs</h3>
+      <p class="text-gray-400 text-sm mb-3 leading-relaxed">Build a culture of innovation with tinkering spaces, idea-to-prototype mentoring and startup exposure.</p>
+      <ul class="svc-list">
+        <li>Innovation labs / tinkering spaces</li>
+        <li>Idea-to-prototype mentoring</li>
+        <li>Startup & entrepreneurship exposure</li>
+        <li>Research-based learning</li>
+      </ul>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="svc-tag">Prototype</span>
+        <span class="svc-tag">Startup Mindset</span>
+      </div>
+    </div>
+
+    <!-- 9. Events & Competitions -->
+    <div class="svc-card reveal" style="transition-delay:.56s">
+      <div class="num-badge">09</div>
+      <div class="svc-icon bg-red-400/15 text-red-400">🏆</div>
+      <h3 class="text-lg font-bold mb-1">Events & Competitions</h3>
+      <p class="text-gray-400 text-sm mb-3 leading-relaxed">High-energy robotics competitions, science exhibitions, hackathons and tech fests that ignite passion.</p>
+      <ul class="svc-list">
+        <li>Robotics competitions</li>
+        <li>Science exhibitions</li>
+        <li>Hackathons</li>
+        <li>Tech fests</li>
+      </ul>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <span class="svc-tag">Inter-school</span>
+        <span class="svc-tag">National Level</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════ HOW IT WORKS ══════════ -->
+<section class="py-20 px-5 sm:px-8 md:px-20 bg-gradient-to-b from-transparent via-slate-900/40 to-transparent border-t border-white/5">
+  <div class="text-center mb-14 reveal">
+    <span class="badge mb-4">Our Process</span>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">How We Work With Schools</h2>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+    <div class="text-center reveal">
+      <div class="step-dot bg-cyan-400/20 border border-cyan-400/40 text-cyan-400 mx-auto mb-4">01</div>
+      <h4 class="font-bold mb-2 text-sm sm:text-base">School Assessment</h4>
+      <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Understand your school's current level, curriculum gaps and goals.</p>
+    </div>
+    <div class="text-center reveal" style="transition-delay:.1s">
+      <div class="step-dot bg-sky-400/20 border border-sky-400/40 text-sky-400 mx-auto mb-4">02</div>
+      <h4 class="font-bold mb-2 text-sm sm:text-base">Custom Planning</h4>
+      <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Design a tailored curriculum and program roadmap for your institution.</p>
+    </div>
+    <div class="text-center reveal" style="transition-delay:.2s">
+      <div class="step-dot bg-indigo-400/20 border border-indigo-400/40 text-indigo-400 mx-auto mb-4">03</div>
+      <h4 class="font-bold mb-2 text-sm sm:text-base">Implementation</h4>
+      <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Deploy programs, train teachers and onboard students seamlessly.</p>
+    </div>
+    <div class="text-center reveal" style="transition-delay:.3s">
+      <div class="step-dot bg-purple-400/20 border border-purple-400/40 text-purple-400 mx-auto mb-4">04</div>
+      <h4 class="font-bold mb-2 text-sm sm:text-base">Ongoing Support</h4>
+      <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Continuous assessments, mentoring and annual program renewals.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ CTA ══════════ -->
+<section class="py-28 text-center relative overflow-hidden px-5">
+  <div class="cta-glow"></div>
+  <div class="relative reveal">
+    <span class="badge mb-6">Let's Get Started</span>
+    <h2 class="text-4xl sm:text-5xl font-extrabold mb-5">
+      Transform Your <span class="gradient-text">School Today</span>
+    </h2>
+    <p class="text-gray-400 mb-10 max-w-xl mx-auto text-base leading-relaxed">
+      Join 200+ schools building future-ready learning environments with SARKIT EdTech's curriculum and academic solutions.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="contact.html" class="bg-gradient-to-r from-cyan-400 to-sky-500 text-black px-12 py-4 rounded-full font-bold shadow-xl shadow-cyan-500/25 hover:scale-105 transition">
+        Talk to an Expert
+      </a>
+      <a href="labsetup.html" class="border border-white/20 text-white px-10 py-4 rounded-full font-semibold hover:border-cyan-400/60 hover:text-cyan-400 transition">
+        Explore Lab Setups
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="border-t border-white/5 py-10 text-center text-gray-500 text-sm">
+  © 2026 SARKIT EdTech Solutions. All rights reserved.
+</footer>
+
+
+<script>
+  // Mobile menu
+  const btn   = document.getElementById('menu-btn');
+  const menu  = document.getElementById('mobile-menu');
+  const close = document.getElementById('menu-close');
+  btn.addEventListener('click',  () => menu.classList.add('open'));
+  close.addEventListener('click',() => menu.classList.remove('open'));
+  menu.addEventListener('click', e => { if(e.target === menu) menu.classList.remove('open'); });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

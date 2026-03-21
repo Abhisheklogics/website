@@ -3,278 +3,848 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lab Setup | Aether Solutions</title>
-
+<title>Lab Setup | SARKIT EdTech Solutions</title>
 <script src="https://cdn.tailwindcss.com"></script>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
-body{
-font-family:'Inter',sans-serif;
-background:#020617;
-}
-                .navbar::after{
-content:"";
-position:absolute;
-left:0;
-bottom:0;
-width:100%;
-height:3px;
+body { font-family:'Inter',sans-serif; background:#020617; }
 
-background:linear-gradient(
-90deg,
-#00f0ff,
-#2ed3e2,
-#7b61ff,
-#00f0ff
-);
+.navbar::after {
+  content:""; position:absolute; left:0; bottom:0; width:100%; height:3px;
+  background:linear-gradient(90deg,#00f0ff,#2ed3e2,#7b61ff,#00f0ff);
+  background-size:300% 100%; animation:gradientMove 6s linear infinite;
+}
+@keyframes gradientMove { 0%{background-position:0% 50%} 100%{background-position:100% 50%} }
 
-background-size:300% 100%;
-animation:gradientMove 6s linear infinite;
+/* Mobile menu */
+#mobile-menu { transform:translateX(100%); transition:transform .3s ease; }
+#mobile-menu.open { transform:translateX(0); }
+
+/* ── AUDIENCE TABS ── */
+.aud-tab {
+  padding:.6rem 1.4rem; border-radius:999px; font-size:.8rem; font-weight:600;
+  letter-spacing:.05em; border:1px solid rgba(255,255,255,.12);
+  color:#94a3b8; cursor:pointer; transition:all .25s ease; white-space:nowrap;
+  background:none;
+}
+.aud-tab:hover { border-color:rgba(255,255,255,.3); color:#fff; }
+.aud-tab.active-schools  { background:rgba(0,240,255,.12); border-color:rgba(0,240,255,.5); color:#00f0ff; }
+.aud-tab.active-colleges { background:rgba(56,189,248,.12); border-color:rgba(56,189,248,.5); color:#38bdf8; }
+.aud-tab.active-research { background:rgba(167,139,250,.12); border-color:rgba(167,139,250,.5); color:#a78bfa; }
+
+/* ── ACCORDION ── */
+.acc-header {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:.9rem 1.2rem; cursor:pointer; border-radius:14px;
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+  transition:border-color .25s, background .25s;
+}
+.acc-header:hover { border-color:rgba(0,240,255,.25); background:rgba(0,240,255,.03); }
+.acc-header.open  { border-color:rgba(0,240,255,.4); background:rgba(0,240,255,.06); border-radius:14px 14px 0 0; }
+.acc-header.open-col  { border-color:rgba(56,189,248,.4)!important; background:rgba(56,189,248,.06)!important; }
+.acc-header.open-res  { border-color:rgba(167,139,250,.4)!important; background:rgba(167,139,250,.06)!important; }
+
+.acc-body {
+  max-height:0; overflow:hidden; opacity:0;
+  transition:max-height .4s ease, opacity .3s ease;
+  border:1px solid rgba(0,240,255,.2); border-top:none;
+  border-radius:0 0 14px 14px; background:rgba(0,0,0,.25);
+}
+.acc-body.open { max-height:800px; opacity:1; }
+.acc-body.open-col { border-color:rgba(56,189,248,.2)!important; }
+.acc-body.open-res { border-color:rgba(167,139,250,.2)!important; }
+
+.acc-chevron { transition:transform .3s; font-size:.7rem; color:#475569; flex-shrink:0; margin-left:.5rem; }
+.acc-header.open .acc-chevron,
+.acc-header.open-col .acc-chevron,
+.acc-header.open-res .acc-chevron { transform:rotate(180deg); }
+
+/* ── SERVICE PILLS ── */
+.svc-pill {
+  padding:.45rem .8rem; border-radius:10px; font-size:.74rem; color:#cbd5e1;
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07);
+  transition:border-color .2s,color .2s; display:flex; align-items:center; gap:.4rem;
+}
+.svc-pill:hover { border-color:rgba(0,240,255,.3); color:#fff; }
+
+.num-pill {
+  width:22px; height:22px; border-radius:6px; font-size:.58rem; font-weight:700;
+  display:inline-flex; align-items:center; justify-content:center; flex-shrink:0;
 }
 
-@keyframes gradientMove{
-0%{background-position:0% 50%;}
-100%{background-position:100% 50%;}
-}
+/* audience panel */
+.aud-panel { display:none; }
+.aud-panel.active { display:block; }
+
+/* scroll reveal */
+.reveal { opacity:0; transform:translateY(22px); transition:opacity .6s ease,transform .6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:translateY(0)} }
+.fade-up { animation:fadeUp .7s ease both; }
+.d1{animation-delay:.12s} .d2{animation-delay:.24s}
 </style>
-
 </head>
-
 <body class="text-white">
 
+<!-- ══════════ NAVBAR ══════════ -->
+<!-- Yeh hai -->
+<nav class="sticky top-0 left-0 w-full z-50 bg-sky-950 navbar relative">
 
-<!-- NAVBAR -->
-
-
-
-<nav  class="sticky top-0 left-0 w-full z-50 bg-sky-950 navbar">
-    <div class="flex flex-col w-full">
-        <div class="flex justify-between items-center px-4 sm:px-6 md:px-20 h-16 md:h-20 text-white bg-gradient-to-b from-black/60 to-transparent">
-         
-            <div class="flex items-center gap-2 sm:gap-3">
-                <div class="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10">
-                    <svg viewBox="0 0 100 100" class="w-full h-full fill-cyan-400">
-                        <path d="M50 10 L10 90 L90 90 Z M50 30 L30 75 L70 75 Z" opacity="0.8"/>
-                        <circle cx="50" cy="50" r="10" class="fill-white"/>
-                    </svg>
-                </div>
-                <div class="leading-none">
-                    <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight">SARKIT EdTech</h1>
-                    <p class="text-[6px] sm:text-[8px] md:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] font-light text-gray-300">SOLUTIONS</p>
-                </div>
-            </div>
-
-            <div class="hidden md:flex items-center">
-                <ul class="flex items-center text-[11px] font-semibold tracking-[0.15em]">
-                   <li id="nav-home" class="cursor-pointer"><a href="index.html">HOME</a></li>
-    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
-
-                    <li class="relative group py-2">
-                        <div class="flex flex-col items-center">
-                            <span class="cursor-pointer">SOLUTIONS</span>
-                            <div class="flex space-x-3 mt-1 font-normal text-gray-400 whitespace-nowrap">
-                                <span class="hover:text-white cursor-pointer"><a href="labsetup.html">Lab Setups</a></span>
-                                <span class="hover:text-white cursor-pointer"><a href="vlab.html">Virtual Labs</a></span>
-                                <span class="hover:text-white cursor-pointer">Curriculum</span>
-                                <span class="hover:text-white cursor-pointer"><a href="kits.html">Kits</a></span>
-                            </div>
-                        </div>
-                    </li>
-
-                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
-                    <li class="hover:text-cyan-400 cursor-pointer uppercase">RESOURCES</li>
-                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
-                    <li class="hover:text-cyan-400 cursor-pointer uppercase">COMPANY</li>
-                    <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
-                   <li id="nav-contact" class="cursor-pointer uppercase"><a href="contact.html">CONTACT</a></li>
-                </ul>
-            </div>
-
-            <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">☰</button>
-        </div>
+<!-- navbar class already hai ✓ — bas CSS mein position:absolute check karo -->
+  <div class="flex flex-col w-full">
+    <div class="flex justify-between items-center px-4 sm:px-6 md:px-20 h-16 md:h-20 text-white bg-gradient-to-b from-black/60 to-transparent">
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10">
+         <div class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 overflow-hidden bg-white/10 rounded-lg">
+        <img src="favicon.ico" alt="Logo" class="w-full h-full object-contain p-1" />
     </div>
+        </div>
+        <div class="leading-none">
+          <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight">SARKIT EdTech</h1>
+          <p class="text-[6px] sm:text-[8px] md:text-[10px] tracking-[0.2em] sm:tracking-[0.3em] font-light text-gray-300">SOLUTIONS</p>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center">
+        <ul class="flex items-center text-[11px] font-semibold tracking-[0.15em]">
+          <li class="cursor-pointer hover:text-cyan-400 transition"><a href="index.html">HOME</a></li>
+          <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+          <li class="relative group py-2">
+            <div class="flex flex-col items-center">
+              <span class="cursor-pointer hover:text-cyan-400 transition">SOLUTIONS</span>
+              <div class="flex space-x-3 mt-1 font-normal text-gray-400 whitespace-nowrap">
+                <span class="text-cyan-400 font-semibold"><a href="labsetup.html">Lab Setups</a></span>
+                <span class="hover:text-white cursor-pointer transition"><a href="vlab.html">Virtual Labs</a></span>
+                <span class="hover:text-white cursor-pointer transition"><a href="c.html">Curriculum</a></span>
+                <span class="hover:text-white cursor-pointer transition"><a href="kits.html">Kits</a></span>
+              </div>
+            </div>
+          </li>
+          <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+          <li class="hover:text-cyan-400 cursor-pointer uppercase transition">RESOURCES</li>
+          <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+          <li class="hover:text-cyan-400 cursor-pointer uppercase transition">COMPANY</li>
+          <span class="mx-4 text-gray-500 font-extralight text-sm">|</span>
+          <li class="cursor-pointer uppercase hover:text-cyan-400 transition"><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </div>
+      <button id="menu-btn" class="md:hidden text-3xl focus:outline-none">☰</button>
+    </div>
+  </div>
 </nav>
 
-<div id="mobile-menu" class="fixed inset-0 bg-black/50 z-50 md:hidden translate-x-full transition-transform duration-300 rounded-lg">
-    <div class="absolute right-0 top-0 h-fit w-64 bg-sky-900 text-white p-6">
-        <button id="menu-close" class="absolute top-4 right-4 text-3xl">&times;</button>
-        <ul class="mt-4 space-y-4 text-sm font-semibold">
-            <li class="text-cyan-100" id="nav-home"><a href="index.html">HOME</a></li>
-            <li class="border-t border-white/10 pt-2">SOLUTIONS</li>
- <li  class="pl-4 text-xs text-gray-300" id="nav-labsetup"><a href="labsetup.html"> Lab Setups</a></li>
-            <li class="pl-4 text-xs text-gray-300"  id="nav-vlab"><a href="vlab.html">Virtual Labs</a></li>
-            <li class="pl-4 text-xs text-gray-300">Curriculum</li>
-            <li class="pl-4 text-xs text-gray-300" id="nav-kits"><a href="kits.html">Kits</a></li>
-            <li class="border-t border-white/10 pt-2">RESOURCES</li>
-            <li>COMPANY</li>
-            <li><a href="contact.html" id="nav-contact">CONTACT</a></li>
-        </ul>
-    </div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-black/50 z-50 md:hidden">
+  <div class="absolute right-0 top-0 h-full w-64 bg-sky-900 text-white p-6 overflow-y-auto">
+    <button id="menu-close" class="absolute top-4 right-4 text-3xl">&times;</button>
+    <ul class="mt-10 space-y-4 text-sm font-semibold">
+      <li class="text-cyan-100"><a href="index.html">HOME</a></li>
+      <li class="border-t border-white/10 pt-2 text-[10px] text-gray-400 uppercase tracking-widest">Solutions</li>
+      <li class="pl-4 text-xs text-cyan-400 font-bold"><a href="labsetup.html">↳ Lab Setups</a></li>
+      <li class="pl-4 text-xs text-gray-300"><a href="vlab.html">↳ Virtual Labs</a></li>
+      <li class="pl-4 text-xs text-gray-300"><a href="c.html">↳ Curriculum</a></li>
+      <li class="pl-4 text-xs text-gray-300"><a href="kits.html">↳ Kits</a></li>
+      <li class="border-t border-white/10 pt-2">RESOURCES</li>
+      <li>COMPANY</li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </div>
 </div>
 
 
-<!-- HERO -->
-
+<!-- ══════════ HERO ══════════ -->
 <section class="pt-40 pb-24 px-6 md:px-20 relative overflow-hidden">
-
-<!-- glow -->
-<div class="absolute w-[600px] h-[600px] bg-cyan-500/20 blur-[180px] top-[-200px] right-[-150px]"></div>
-
-<h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight max-w-3xl">
-Designing <span class="text-cyan-400">Next-Gen</span> <br> Innovation Labs
-</h1>
-
-<p class="text-gray-400 text-lg max-w-xl mb-10">
-End-to-end STEM, AI and Robotics lab deployment with futuristic infrastructure,
-virtual experimentation platforms and scalable learning ecosystems.
-</p>
-
-<button class="bg-gradient-to-r from-cyan-400 to-sky-500 text-black px-10 py-4 rounded-full font-bold shadow-xl shadow-cyan-500/30 hover:scale-105 transition">
-Request Lab Blueprint
-</button>
-
+  <div class="absolute w-[600px] h-[600px] bg-cyan-500/20 blur-[180px] top-[-200px] right-[-150px] pointer-events-none"></div>
+  <div class="fade-up">
+    <span class="inline-block text-[10px] font-bold tracking-[.2em] uppercase px-3 py-1.5 rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/20 mb-6">Lab Setup Services</span>
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight max-w-3xl">
+      Designing <span class="text-cyan-400">Next-Gen</span><br>Innovation Labs
+    </h1>
+  </div>
+  <p class="text-gray-400 text-lg max-w-xl mb-10 fade-up d1">
+    End-to-end STEM, AI and Robotics lab deployment with futuristic infrastructure, virtual experimentation platforms and scalable learning ecosystems.
+  </p>
+  <div class="flex flex-wrap gap-4 fade-up d2">
+    <button class="bg-gradient-to-r from-cyan-400 to-sky-500 text-black px-10 py-4 rounded-full font-bold shadow-xl shadow-cyan-500/30 hover:scale-105 transition">
+      Request Lab Blueprint
+    </button>
+    <a href="#all-services" class="border border-white/20 text-white px-8 py-4 rounded-full font-semibold hover:border-cyan-400/50 hover:text-cyan-400 transition text-sm">
+      Explore All Services ↓
+    </a>
+  </div>
 </section>
 
 
-
-<!-- FEATURES -->
-
+<!-- ══════════ FEATURES ══════════ -->
 <section class="py-24 px-6 md:px-20 border-t border-white/5">
+  <h2 class="text-3xl font-bold mb-14 reveal">Lab Ecosystem Includes</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-cyan-400/60 hover:translate-y-[-8px] transition reveal">
+      <div class="w-12 h-12 bg-cyan-400/20 rounded-xl mb-5 flex items-center justify-center text-2xl">🔧</div>
+      <h3 class="text-xl font-bold mb-3">Hardware Infrastructure</h3>
+      <p class="text-gray-400 text-sm">Embedded boards, robotics kits, sensor arrays and mechanical innovation tools.</p>
+    </div>
+    <div class="bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-cyan-400/60 hover:translate-y-[-8px] transition reveal" style="transition-delay:.1s">
+      <div class="w-12 h-12 bg-sky-400/20 rounded-xl mb-5 flex items-center justify-center text-2xl">☁️</div>
+      <h3 class="text-xl font-bold mb-3">Virtual Simulation Stack</h3>
+      <p class="text-gray-400 text-sm">Cloud-based coding environments, digital twins and AI experimentation spaces.</p>
+    </div>
+    <div class="bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-cyan-400/60 hover:translate-y-[-8px] transition reveal" style="transition-delay:.2s">
+      <div class="w-12 h-12 bg-indigo-400/20 rounded-xl mb-5 flex items-center justify-center text-2xl">👩‍🏫</div>
+      <h3 class="text-xl font-bold mb-3">Faculty Upskilling</h3>
+      <p class="text-gray-400 text-sm">Training programs, pedagogy integration and innovation mentoring workshops.</p>
+    </div>
+  </div>
+</section>
 
-<h2 class="text-3xl font-bold mb-14">Lab Ecosystem Includes</h2>
 
-<div class="grid md:grid-cols-3 gap-8">
+<!-- ══════════ ALL SERVICES — 3 AUDIENCE TABS + ACCORDIONS ══════════ -->
+<section id="all-services" class="py-24 px-6 md:px-20 border-t border-white/5">
 
-<div class="bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-cyan-400/60 hover:translate-y-[-8px] transition">
+  <div class="mb-12 reveal">
+    <span class="inline-block text-[10px] font-bold tracking-[.2em] uppercase px-3 py-1.5 rounded-full bg-cyan-400/10 text-cyan-400 border border-cyan-400/20 mb-4">Complete Service Portfolio</span>
+    <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-3">Solutions For Every Institution</h2>
+    <p class="text-gray-400 max-w-lg text-sm leading-relaxed">Select your institution type below — then expand any service category to see what's included.</p>
+  </div>
 
-<div class="w-12 h-12 bg-cyan-400/20 rounded-xl mb-5"></div>
+  <!-- ── 3 Audience Tabs ── -->
+  <div class="flex flex-wrap gap-3 mb-8 reveal">
+    <button class="aud-tab active-schools" onclick="switchAud('schools',this)">🏫 &nbsp;For Schools</button>
+    <button class="aud-tab" onclick="switchAud('colleges',this)">🎓 &nbsp;For Colleges</button>
+    <button class="aud-tab" onclick="switchAud('research',this)">🔬 &nbsp;For Researchers</button>
+  </div>
 
-<h3 class="text-xl font-bold mb-3">Hardware Infrastructure</h3>
-<p class="text-gray-400 text-sm">
-Embedded boards, robotics kits, sensor arrays and mechanical innovation tools.
-</p>
 
-</div>
+  <!-- ════ SCHOOLS PANEL ════ -->
+  <div id="panel-schools" class="aud-panel active">
+    <p class="text-gray-500 text-[11px] mb-5 uppercase tracking-widest font-semibold">10 service categories</p>
+    <div class="space-y-2">
 
-<div class="bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-cyan-400/60 hover:translate-y-[-8px] transition">
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'s')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-cyan-400/15 text-cyan-400 shrink-0">01</div>
+            <span class="text-sm font-semibold truncate">Lab Setup Services</span>
+          </div>
+          <span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🔬 STEM Lab Setup</div>
+            <div class="svc-pill">🤖 AI &amp; Machine Learning Lab</div>
+            <div class="svc-pill">⚙️ Robotics Lab</div>
+            <div class="svc-pill">📡 IoT Lab</div>
+            <div class="svc-pill">🖨️ 3D Printing Lab</div>
+            <div class="svc-pill">🚁 Drone Lab</div>
+            <div class="svc-pill">🥽 AR/VR Lab</div>
+            <div class="svc-pill">🖥️ Smart Classrooms &amp; Digital Labs</div>
+          </div>
+        </div>
+      </div>
 
-<div class="w-12 h-12 bg-sky-400/20 rounded-xl mb-5"></div>
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'s')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-cyan-400/15 text-cyan-400 shrink-0">02</div>
+            <span class="text-sm font-semibold truncate">Curriculum &amp; Academic Solutions</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">📋 NEP 2020 Aligned Curriculum</div>
+            <div class="svc-pill">💻 STEM / AI / Coding Syllabus</div>
+            <div class="svc-pill">🎯 Activity-Based Learning Modules</div>
+            <div class="svc-pill">📱 Digital Content &amp; Lesson Plans</div>
+          </div>
+        </div>
+      </div>
 
-<h3 class="text-xl font-bold mb-3">Virtual Simulation Stack</h3>
-<p class="text-gray-400 text-sm">
-Cloud-based coding environments, digital twins and AI experimentation spaces.
-</p>
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'s')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-cyan-400/15 text-cyan-400 shrink-0">03</div>
+            <span class="text-sm font-semibold truncate">Teacher Training &amp; Enablement</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🧑‍💻 AI &amp; Coding Training for Teachers</div>
+            <div class="svc-pill">🏫 STEM Pedagogy Training</div>
+            <div class="svc-pill">📝 Lesson Planning Tools</div>
+            <div class="svc-pill">🎖️ Certification Programs</div>
+          </div>
+        </div>
+      </div>
 
-</div>
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'s')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-cyan-400/15 text-cyan-400 shrink-0">04</div>
+            <span class="text-sm font-semibold truncate">Student Skill Development Programs</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🐍 Coding — Scratch &amp; Python</div>
+            <div class="svc-pill">🧠 AI &amp; Data Science</div>
+            <div class="svc-pill">⚙️ Robotics &amp; Automation</div>
+            <div class="svc-pill">📡 IoT &amp; Embedded Systems</div>
+            <div class="svc-pill">🚁 Drone &amp; Emerging Tech Skills</div>
+          </div>
+        </div>
+      </div>
 
-<div class="bg-white/5 backdrop-blur-lg p-8 rounded-3xl border border-white/10 hover:border-cyan-400/60 hover:translate-y-[-8px] transition">
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'s')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-cyan-400/15 text-cyan-400 shrink-0">05</div>
+            <span class="text-sm font-semibold truncate">Workshops &amp; Bootcamps</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">⚡ 1-Day Awareness Sessions</div>
+            <div class="svc-pill">🛠️ Hands-On Workshops</div>
+            <div class="svc-pill">☀️ Summer / Winter Camps</div>
+            <div class="svc-pill">💡 Hackathons &amp; Innovation Challenges</div>
+          </div>
+        </div>
+      </div>
 
-<div class="w-12 h-12 bg-indigo-400/20 rounded-xl mb-5"></div>
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'s')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-cyan-400/15 text-cyan-400 shrink-0">06</div>
+            <span class="text-sm font-semibold truncate">ATL (Atal Tinkering Lab) Services</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🏗️ Complete ATL Setup</div>
+            <div class="svc-pill">📦 Equipment Supply</div>
+            <div class="svc-pill">📅 Activity Planning</div>
+            <div class="svc-pill">🌱 Innovation Mentoring</div>
+            <div class="svc-pill">🏆 ATL Competitions</div>
+          </div>
+        </div>
+      </div>
 
-<h3 class="text-xl font-bold mb-3">Faculty Upskilling</h3>
-<p class="text-gray-400 text-sm">
-Training programs, pedagogy integration and innovation mentoring workshops.
-</p>
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'s')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-cyan-400/15 text-cyan-400 shrink-0">07</div>
+            <span class="text-sm font-semibold truncate">School Digital Transformation</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">📺 Smart Classroom Solutions</div>
+            <div class="svc-pill">🎓 Learning Management Systems (LMS)</div>
+            <div class="svc-pill">🧠 AI-Powered Learning Platforms</div>
+            <div class="svc-pill">🎯 Personalized Learning Systems</div>
+          </div>
+        </div>
+      </div>
 
-</div>
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'s')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-cyan-400/15 text-cyan-400 shrink-0">08</div>
+            <span class="text-sm font-semibold truncate">Annual Programs (Subscription Model)</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">📆 Weekly STEM / AI Classes</div>
+            <div class="svc-pill">📊 Continuous Assessments</div>
+            <div class="svc-pill">🔨 Project-Based Learning</div>
+            <div class="svc-pill">🏅 Competitions &amp; Showcases</div>
+          </div>
+        </div>
+      </div>
 
-</div>
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'s')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-cyan-400/15 text-cyan-400 shrink-0">09</div>
+            <span class="text-sm font-semibold truncate">Innovation &amp; Research Programs</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🔬 Innovation Labs / Tinkering Spaces</div>
+            <div class="svc-pill">💡 Idea-to-Prototype Mentoring</div>
+            <div class="svc-pill">🚀 Startup &amp; Entrepreneurship Exposure</div>
+            <div class="svc-pill">📚 Research-Based Learning</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'s')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-cyan-400/15 text-cyan-400 shrink-0">10</div>
+            <span class="text-sm font-semibold truncate">Events &amp; Competitions</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🤖 Robotics Competitions</div>
+            <div class="svc-pill">🔭 Science Exhibitions</div>
+            <div class="svc-pill">⌨️ Hackathons</div>
+            <div class="svc-pill">🎉 Tech Fests</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /schools -->
+
+
+  <!-- ════ COLLEGES PANEL ════ -->
+  <div id="panel-colleges" class="aud-panel">
+    <p class="text-gray-500 text-[11px] mb-5 uppercase tracking-widest font-semibold">10 service categories · tap to expand</p>
+    <div class="space-y-2">
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'c')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-sky-400/15 text-sky-400 shrink-0">01</div>
+            <span class="text-sm font-semibold truncate">Academic &amp; Learning Solutions</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🎓 Online Courses &amp; Certification Programs</div>
+            <div class="svc-pill">📚 Learning Management Systems (LMS)</div>
+            <div class="svc-pill">🖥️ Digital Classrooms &amp; E-Learning Platforms</div>
+            <div class="svc-pill">🎥 Recorded + Live Classes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'c')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-sky-400/15 text-sky-400 shrink-0">02</div>
+            <span class="text-sm font-semibold truncate">Lab Setup &amp; Technical Infrastructure</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🤖 AI / Data Science Labs</div>
+            <div class="svc-pill">📡 IoT &amp; Embedded Systems Labs</div>
+            <div class="svc-pill">⚙️ Robotics &amp; Automation Labs</div>
+            <div class="svc-pill">☁️ Virtual Labs &amp; Simulation Tools</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'c')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-sky-400/15 text-sky-400 shrink-0">03</div>
+            <span class="text-sm font-semibold truncate">College Management Software (ERP)</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">📋 Admission Management</div>
+            <div class="svc-pill">👤 Student Lifecycle Tracking</div>
+            <div class="svc-pill">📝 Exam &amp; Result Management</div>
+            <div class="svc-pill">📱 Attendance &amp; Communication Systems</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'c')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-sky-400/15 text-sky-400 shrink-0">04</div>
+            <span class="text-sm font-semibold truncate">Skill Development Programs</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🧠 AI, IoT, Robotics, Data Science Training</div>
+            <div class="svc-pill">💻 Coding &amp; Software Development Courses</div>
+            <div class="svc-pill">🎖️ Industry Certification Programs</div>
+            <div class="svc-pill">🔨 Hands-On Project-Based Learning</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'c')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-sky-400/15 text-sky-400 shrink-0">05</div>
+            <span class="text-sm font-semibold truncate">Center of Excellence (CoE)</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🤖 AI / Data Science CoE</div>
+            <div class="svc-pill">📡 IoT / Embedded CoE</div>
+            <div class="svc-pill">⚙️ Robotics Innovation Labs</div>
+            <div class="svc-pill">🏭 Industry-Sponsored Labs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'c')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-sky-400/15 text-sky-400 shrink-0">06</div>
+            <span class="text-sm font-semibold truncate">Internship &amp; Placement Support</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">💼 Internship Opportunities</div>
+            <div class="svc-pill">🏗️ Live Industry Projects</div>
+            <div class="svc-pill">🎯 Placement Training (Aptitude, Coding, Soft Skills)</div>
+            <div class="svc-pill">🌐 Job Portal Integration</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'c')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-sky-400/15 text-sky-400 shrink-0">07</div>
+            <span class="text-sm font-semibold truncate">Faculty Development Programs (FDP)</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🧑‍💻 Teacher Training (AI, Coding, New Tech)</div>
+            <div class="svc-pill">🎖️ Certification Programs for Faculty</div>
+            <div class="svc-pill">📖 Teaching Methodology Training</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'c')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-sky-400/15 text-sky-400 shrink-0">08</div>
+            <span class="text-sm font-semibold truncate">Research &amp; Project Support</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">📁 Final Year Project Development</div>
+            <div class="svc-pill">📄 Research Paper Writing Guidance</div>
+            <div class="svc-pill">📊 Data Analysis &amp; Tools Support</div>
+            <div class="svc-pill">🚀 Innovation &amp; Startup Mentoring</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'c')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-sky-400/15 text-sky-400 shrink-0">09</div>
+            <span class="text-sm font-semibold truncate">Content &amp; Curriculum Development</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🏭 Industry-Aligned Curriculum</div>
+            <div class="svc-pill">📋 NEP 2020-Based Programs</div>
+            <div class="svc-pill">📱 Digital Content &amp; Study Materials</div>
+            <div class="svc-pill">📊 Assessment Systems</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'c')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-sky-400/15 text-sky-400 shrink-0">10</div>
+            <span class="text-sm font-semibold truncate">Digital Transformation Services</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🌐 Website &amp; Mobile App Development</div>
+            <div class="svc-pill">📣 Branding &amp; Digital Presence</div>
+            <div class="svc-pill">🏫 Smart Campus Solutions</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /colleges -->
+
+
+  <!-- ════ RESEARCHERS PANEL ════ -->
+  <div id="panel-research" class="aud-panel">
+    <p class="text-gray-500 text-[11px] mb-5 uppercase tracking-widest font-semibold">10 service categories · tap to expand</p>
+    <div class="space-y-2">
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'r')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-violet-400/15 text-violet-400 shrink-0">01</div>
+            <span class="text-sm font-semibold truncate">Research Writing Services</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">📄 Research Paper Writing (IEEE, Scopus, UGC)</div>
+            <div class="svc-pill">🔍 Literature Review &amp; Gap Analysis</div>
+            <div class="svc-pill">📑 Review Papers &amp; Survey Articles</div>
+            <div class="svc-pill">🎓 Thesis &amp; Dissertation (B.Tech, M.Tech, PhD)</div>
+            <div class="svc-pill">📋 Research Proposal Writing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'r')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-violet-400/15 text-violet-400 shrink-0">02</div>
+            <span class="text-sm font-semibold truncate">Data Analysis &amp; Research Support</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🗂️ Data Collection &amp; Preprocessing</div>
+            <div class="svc-pill">📊 Statistical Analysis (Python, R, MATLAB)</div>
+            <div class="svc-pill">📈 Result Interpretation &amp; Visualization</div>
+            <div class="svc-pill">📉 Graphs, Charts &amp; Report Integration</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'r')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-violet-400/15 text-violet-400 shrink-0">03</div>
+            <span class="text-sm font-semibold truncate">Editing &amp; Quality Improvement</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🔒 Plagiarism Checking &amp; Removal</div>
+            <div class="svc-pill">✍️ Paraphrasing &amp; Rewriting</div>
+            <div class="svc-pill">✅ Proofreading &amp; Grammar Correction</div>
+            <div class="svc-pill">📐 Formatting (IEEE, APA, MLA)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'r')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-violet-400/15 text-violet-400 shrink-0">04</div>
+            <span class="text-sm font-semibold truncate">Publication Support</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">📚 Journal Selection (Scopus, SCI, UGC)</div>
+            <div class="svc-pill">📐 Paper Formatting as per Guidelines</div>
+            <div class="svc-pill">📤 Paper Submission Support</div>
+            <div class="svc-pill">🔄 Reviewer Comments &amp; Revisions</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Patent divider -->
+      <div class="flex items-center gap-3 py-3">
+        <div class="h-px flex-1 bg-white/10"></div>
+        <span class="text-[10px] font-bold tracking-widest text-violet-400 uppercase shrink-0">Patent &amp; Innovation Services</span>
+        <div class="h-px flex-1 bg-white/10"></div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'r')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-violet-400/15 text-violet-400 shrink-0">05</div>
+            <span class="text-sm font-semibold truncate">Idea Development &amp; Innovation Support</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">✅ Idea Validation &amp; Feasibility Analysis</div>
+            <div class="svc-pill">🎯 Problem Statement Identification</div>
+            <div class="svc-pill">🗺️ Innovation Strategy &amp; Roadmap</div>
+            <div class="svc-pill">🔧 Prototype Planning</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'r')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-violet-400/15 text-violet-400 shrink-0">06</div>
+            <span class="text-sm font-semibold truncate">Patent Drafting Services</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🔎 Patentability Search (Novelty Check)</div>
+            <div class="svc-pill">📜 Prior Art Analysis</div>
+            <div class="svc-pill">📝 Patent Drafting (Provisional &amp; Complete)</div>
+            <div class="svc-pill">⚖️ Claims Writing</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'r')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-violet-400/15 text-violet-400 shrink-0">07</div>
+            <span class="text-sm font-semibold truncate">Patent Filing &amp; Legal Support</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🇮🇳 Patent Filing (India &amp; International – PCT)</div>
+            <div class="svc-pill">📂 Documentation &amp; Forms Preparation</div>
+            <div class="svc-pill">⚖️ Support with Patent Agents / Attorneys</div>
+            <div class="svc-pill">📩 Response to Examination Reports</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'r')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-violet-400/15 text-violet-400 shrink-0">08</div>
+            <span class="text-sm font-semibold truncate">Patent Research &amp; Analysis</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🔍 Prior Art Search (Google Patents, Databases)</div>
+            <div class="svc-pill">🗺️ Patent Landscape Analysis</div>
+            <div class="svc-pill">🏢 Competitor Patent Analysis</div>
+            <div class="svc-pill">📈 Technology Trend Analysis</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'r')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-violet-400/15 text-violet-400 shrink-0">09</div>
+            <span class="text-sm font-semibold truncate">Institutional Innovation Support</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">🏫 Innovation &amp; IPR Cell Setup</div>
+            <div class="svc-pill">🎤 Patent Awareness Workshops</div>
+            <div class="svc-pill">👩‍🎓 Faculty &amp; Student Training on IPR</div>
+            <div class="svc-pill">💡 Support for Hackathons &amp; Challenges</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc-wrap">
+        <div class="acc-header" onclick="toggleAcc(this,'r')">
+          <div class="flex items-center gap-3 min-w-0">
+            <div class="num-pill bg-violet-400/15 text-violet-400 shrink-0">10</div>
+            <span class="text-sm font-semibold truncate">Prototype &amp; Product Development Support</span>
+          </div><span class="acc-chevron shrink-0">▼</span>
+        </div>
+        <div class="acc-body">
+          <div class="p-4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+            <div class="svc-pill">💡 Idea to Prototype Guidance</div>
+            <div class="svc-pill">📄 Technical Documentation</div>
+            <div class="svc-pill">🚀 MVP Development</div>
+            <div class="svc-pill">🧪 Testing &amp; Validation Support</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div><!-- /research -->
 
 </section>
 
 
-
-<!-- PACKAGES -->
-
+<!-- ══════════ PACKAGES ══════════ -->
 <section class="py-24 px-6 md:px-20 bg-gradient-to-b from-transparent to-slate-900">
-
-<h2 class="text-3xl font-bold mb-16">Deployment Packages</h2>
-
-<div class="grid md:grid-cols-3 gap-10">
-
-<div class="bg-white/5 p-10 rounded-[40px] border border-white/10 hover:border-cyan-400 transition">
-
-<h3 class="text-2xl font-bold mb-4">Starter Lab</h3>
-
-<p class="text-gray-400 mb-8 text-sm">
-Foundation electronics + coding innovation workspace.
-</p>
-
-<button class="bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200">
-Explore
-</button>
-
-</div>
-
-
-<div class="bg-gradient-to-br from-cyan-400 to-sky-500 text-black p-12 rounded-[40px] scale-105 shadow-2xl shadow-cyan-500/30">
-
-<h3 class="text-2xl font-bold mb-4">Innovation Lab</h3>
-
-<p class="mb-8 text-sm">
-Integrated AI, Robotics & IoT ecosystem for future ready institutions.
-</p>
-
-<button class="bg-black text-white px-6 py-3 rounded-full font-bold">
-Explore
-</button>
-
-</div>
-
-
-<div class="bg-white/5 p-10 rounded-[40px] border border-white/10 hover:border-cyan-400 transition">
-
-<h3 class="text-2xl font-bold mb-4">Research Lab</h3>
-
-<p class="text-gray-400 mb-8 text-sm">
-Advanced mechatronics and AI experimentation infrastructure.
-</p>
-
-<button class="bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200">
-Explore
-</button>
-
-</div>
-
-</div>
-
+  <h2 class="text-3xl font-bold mb-16 reveal">Deployment Packages</h2>
+  <div class="grid md:grid-cols-3 gap-10">
+    <div class="bg-white/5 p-10 rounded-[40px] border border-white/10 hover:border-cyan-400 transition reveal">
+      <h3 class="text-2xl font-bold mb-4">Starter Lab</h3>
+      <p class="text-gray-400 mb-8 text-sm">Foundation electronics + coding innovation workspace.</p>
+      <button class="bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200">Explore</button>
+    </div>
+    <div class="bg-gradient-to-br from-cyan-400 to-sky-500 text-black p-12 rounded-[40px] scale-105 shadow-2xl shadow-cyan-500/30 reveal" style="transition-delay:.1s">
+      <h3 class="text-2xl font-bold mb-4">Innovation Lab</h3>
+      <p class="mb-8 text-sm">Integrated AI, Robotics &amp; IoT ecosystem for future ready institutions.</p>
+      <button class="bg-black text-white px-6 py-3 rounded-full font-bold">Explore</button>
+    </div>
+    <div class="bg-white/5 p-10 rounded-[40px] border border-white/10 hover:border-cyan-400 transition reveal" style="transition-delay:.2s">
+      <h3 class="text-2xl font-bold mb-4">Research Lab</h3>
+      <p class="text-gray-400 mb-8 text-sm">Advanced mechatronics and AI experimentation infrastructure.</p>
+      <button class="bg-white text-black px-6 py-3 rounded-full font-bold hover:bg-gray-200">Explore</button>
+    </div>
+  </div>
 </section>
 
 
-
-<!-- CTA -->
-
+<!-- ══════════ CTA ══════════ -->
 <section class="py-28 text-center relative overflow-hidden">
-
-<div class="absolute w-[500px] h-[500px] bg-sky-500/20 blur-[150px] bottom-[-200px] left-[50%] translate-x-[-50%]"></div>
-
-<h2 class="text-4xl md:text-5xl font-bold mb-6">
-Build Your <span class="text-cyan-400">Future Lab</span>
-</h2>
-
-<p class="text-gray-400 mb-10 max-w-xl mx-auto">
-Our experts design scalable STEM innovation ecosystems aligned with NEP and global tech trends.
-</p>
-
-<button class="bg-gradient-to-r from-cyan-400 to-sky-500 text-black px-12 py-5 rounded-full font-bold shadow-xl shadow-cyan-500/30 hover:scale-105 transition">
-Talk to Specialist
-</button>
-
+  <div class="absolute w-[500px] h-[500px] bg-sky-500/20 blur-[150px] bottom-[-200px] left-[50%] translate-x-[-50%] pointer-events-none"></div>
+  <div class="relative reveal">
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">Build Your <span class="text-cyan-400">Future Lab</span></h2>
+    <p class="text-gray-400 mb-10 max-w-xl mx-auto">Our experts design scalable STEM innovation ecosystems aligned with NEP and global tech trends.</p>
+    <button class="bg-gradient-to-r from-cyan-400 to-sky-500 text-black px-12 py-5 rounded-full font-bold shadow-xl shadow-cyan-500/30 hover:scale-105 transition">
+      Talk to Specialist
+    </button>
+  </div>
 </section>
-
-
-
-
 
 <footer class="border-t border-white/5 py-10 text-center text-gray-500 text-sm">
-© 2026 Aether Solutions
+  ©  2026 SARKIT EdTech Solutions
 </footer>
-<script src="./script.js">
-   
-   
+
+<script src="./script.js"></script>
+<script>
+  // Mobile menu
+  document.getElementById('menu-btn').addEventListener('click',()=>document.getElementById('mobile-menu').classList.add('open'));
+  document.getElementById('menu-close').addEventListener('click',()=>document.getElementById('mobile-menu').classList.remove('open'));
+  document.getElementById('mobile-menu').addEventListener('click',e=>{if(e.target===document.getElementById('mobile-menu'))document.getElementById('mobile-menu').classList.remove('open');});
+
+  // Audience switcher
+  function switchAud(type, btn) {
+    document.querySelectorAll('.aud-panel').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.aud-tab').forEach(b=>b.classList.remove('active-schools','active-colleges','active-research'));
+    document.getElementById('panel-'+type).classList.add('active');
+    btn.classList.add('active-'+type);
+    // close all accordions
+    document.querySelectorAll('#panel-'+type+' .acc-body').forEach(b=>{b.classList.remove('open','open-col','open-res');});
+    document.querySelectorAll('#panel-'+type+' .acc-header').forEach(h=>{h.classList.remove('open','open-col','open-res');});
+  }
+
+  // Accordion — one open at a time per panel
+  function toggleAcc(hdr, type) {
+    const body = hdr.nextElementSibling;
+    const wasOpen = body.classList.contains('open');
+    const panel = hdr.closest('.aud-panel');
+    // close all
+    panel.querySelectorAll('.acc-body').forEach(b=>b.classList.remove('open','open-col','open-res'));
+    panel.querySelectorAll('.acc-header').forEach(h=>h.classList.remove('open','open-col','open-res'));
+    if(!wasOpen){
+      body.classList.add('open');
+      hdr.classList.add('open');
+      if(type==='c'){hdr.classList.add('open-col');body.classList.add('open-col');}
+      if(type==='r'){hdr.classList.add('open-res');body.classList.add('open-res');}
+    }
+  }
+
+  // Scroll reveal
+  const ro = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});
+  },{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 </script>
 </body>
-
 </html>
