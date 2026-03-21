@@ -25,7 +25,8 @@ const navMap = {
     'contact.html': 'nav-contact',
     'kits.html': 'nav-kits',
     'vlab.html': 'nav-vlab',
-    'labsetup.html': 'nav-labsetup'
+    'labsetup.html': 'nav-labsetup',
+    'c.html': 'nav-c'
 };
 
 if (navMap[currentPage]) {

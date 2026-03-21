@@ -46,9 +46,9 @@ animation:gradientMove 6s linear infinite;
          
             <div class="flex items-center gap-2 sm:gap-3">
                 <div class="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10">
-                   <div class="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10">
-                    <img   src="favicon.ico"  class="rounded-lg h-10 w-10"/>
-                </div>
+                   <div class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 overflow-hidden bg-white/10 rounded-lg">
+        <img src="favicon.ico" alt="Logo" class="w-full h-full object-contain p-1" />
+    </div>
                 </div>
                 <div class="leading-none">
                     <h1 class="text-lg sm:text-xl md:text-2xl font-bold tracking-tight">SARKIT EdTech</h1>
@@ -65,10 +65,10 @@ animation:gradientMove 6s linear infinite;
                         <div class="flex flex-col items-center">
                             <span class="cursor-pointer">SOLUTIONS</span>
                             <div class="flex space-x-3 mt-1 font-normal text-gray-400 whitespace-nowrap">
-                                <span class="hover:text-white cursor-pointer"><a href="labsetup.html">Lab Setups</a></span>
-                                <span class="hover:text-white cursor-pointer"><a href="vlab.html">Virtual Labs</a></span>
-                                <span class="hover:text-white cursor-pointer"><a href="c.html">Curriculum</a></span>
-                                <span class="hover:text-white cursor-pointer"><a href="kits.html">Kits</a></span>
+                                <span class="hover:text-white cursor-pointer" id="nav-labsetup"><a href="labsetup.html">Lab Setups</a></span>
+                                <span class="hover:text-white cursor-pointer" id="nav-vlab"><a href="vlab.html">Virtual Labs</a></span>
+                                <span class="hover:text-white cursor-pointer" id="nav-c"><a href="c.html">Curriculum</a></span>
+                                <span class="hover:text-white cursor-pointer" id="nav-kits"><a href="kits.html">Kits</a></span>
                             </div>
                         </div>
                     </li>
@@ -95,11 +95,11 @@ animation:gradientMove 6s linear infinite;
             <li class="border-t border-white/10 pt-2">SOLUTIONS</li>
  <li  class="pl-4 text-xs text-gray-300" id="nav-labsetup"><a href="labsetup.html"> Lab Setups</a></li>
             <li class="pl-4 text-xs text-gray-300"  id="nav-vlab"><a href="vlab.html">Virtual Labs</a></li>
-            <li class="pl-4 text-xs text-gray-300"><a href="c.html">Curriculum</a></li>
+            <li class="pl-4 text-xs text-gray-300" id="nav-c"><a href="c.html">Curriculum</a></li>
             <li class="pl-4 text-xs text-gray-300" id="nav-kits"><a href="kits.html">Kits</a></li>
             <li class="border-t border-white/10 pt-2">RESOURCES</li>
             <li>COMPANY</li>
-            <li><a href="contact.html" id="nav-contact">CONTACT</a></li>
+            <li><a href="contact.html" id="nav-contact" id="nav-contact">CONTACT</a></li>
         </ul>
     </div>
 </div>
